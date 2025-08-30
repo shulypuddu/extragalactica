@@ -1,0 +1,79 @@
+ ---Relación bulbo/disco:
+sirve para conocer cual es la estructura interna principal de la galaxia
+
+I0 intensidad central
+Ie intensidad efectiva
+
+ ---Índice de concentración: 
+forma de definir radios hecha a partir del cociente de los radios donde se centra el 90% de la luz vs el 50% (va entre 1.5 y casi 4)
+a la izq de 2.5 se encuentran las tardias y star-formers y a la derecha se correlacionan con las tipo temprano y pasivas
+ (tempranos y tardias clasificación mas tipo Hubble) (star-formers y passives clasificación de otro tipo) no se correlacionan 1 a 1
+ 
+ 
+ ---Colores de las galaxias: Bimodalidad
+ Si te salta "one or more errors ocurred" es que la pagina esta caida.
+ Para crear el usuario solo necesitamos correo, usuario y una contraseña q mezcle minuscula mayuscula numeros y caracteres especiales. Una vez hecho se puede entrar directamente a la  
+ 
+ al hacer un diagrama color-magnitud se observan la secuencia roja (temprana y/o pasivas) y la nube azul (star-formers y/o tardias)
+ 
+ De aca nace la idea del GREEN VALLEY o galaxias de transición
+ 
+ Mejores filtros para separar las poblaciones son el u-r (del SDSS)
+ 
+ 
+ 
+ ------ SLOAN:
+ DR7 el DR mas grande q hicieron, luego de esto fueron tomando otros proyectos paralelos por tanto disminuyeron el volumen
+ 
+ Ahora para el practico vamos a usar el DR17 (aunque es común seguir usando el DR7) parte de la etapa SDSS III
+
+---------------------. PRÁCTICO 2 .--------------------------
+  
+Las preguntas del práctico no son para responder directamente en el informe sino que son orientativas.
+
+Próxima clase vamos a discutir esas primeras preguntas.
+
+CasJobs
+mydb es como nuestro escritorio, tenemos q usar mysql para poder recuperar la información de ciertas tablas de datos ya existentes guardandolas en tablas q creamos en el mydb 
+ 
+en skyserver en la sección de scheme browser podemos ver la  
+
+---->  skyserver.sdss > more tools > schema browser > tables
+
+petroMag = magnitudes petrosianas
+
+(masa y magnitud son parientes)
+
+SDSS Query: 
+crear datos para mi primera tabla desde la pantalla Query 
+
+SELECT TOP #cant_datos columna_1 , columna_2 columna_3 INTO Mi_tabla FROM tabla_gral AS apodo
+
+puedo ver el historial de mis búsquedas en la plantalla History
+
+Por ahora hacemos los ejercicios 1 y 2 (bajar los datos y graficar)
+
+Que tablas/views usamos?? z viene de las tablas de espectrometria 
+	-----> dbo.Galaxy (parte fotometrica)
+	-----> dbo-SpecObj (parte espectroscópica y z)
+ !! ACLARACIÓN: ambas son VIEWS
+ 
+ Magnitudes a partir de los perfiles de luminosidad, conviene usarlas? sacan la magnitud usando la ley de de Vaucoulers y la ley exponencial
+ 
+Para ver mas ayuda sobre las sentencias en mysql ir a help de SDSS Query 
+
+Código para probar
+
+select top 10 g.Objid, s.bestObjID, g.ra, g.dec, s.z 
+into myDb.nombre_tabla_nueva !!SI PONGO ESTA LINEA SE EJECUTA CON SUBMIT
+from galaxy as g, specobj as s
+where g.SpecOBjID != 0  and s.SpecObjId = g.specObjID
+
+si no agrego el into se puede ejecutar con Quick y muestra los resultados en pantalla.
+
+
+
+
+
+
+

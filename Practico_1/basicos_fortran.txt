@@ -1,0 +1,144 @@
+Entrega practico :  formato paper/informe 
+para el practico 1 primera parte por escrito.
+environment es como una burbuja
+crear uno para el curso  de extragalactica para usarlo con python desde la pc
+
+fortran es secuencial g
+para compilar:  gfortran -o ARCHIVO.f90
+para ejecutar: ./PROGAMA
+
+vamos a arrancar con fortran 77. NO DISTINGUE MAYUSCULAS Y MINUSCULAS
+por defecto ( i j k l m n ) son para nros enteros y ( x y z) son reales 
+! = comentario 
+a partir del f90 entiende todas las versiones anteriores
+
+SINTAXIS:
+	program NOMBREARCH
+	implicit nonne (NO ASUMAS NINGUNA VARIABLE TODOS LOS LOS VALORES POR DEFECTO SE BORRAN)
+	! COMENTARIO
+	.
+	.
+	declaracion de variables 
+	.
+	.
+	
+	-
+	-
+	cuerpo del programa
+	-
+	-
+
+	end program NOMBREARCH
+
+instalar gvim
+para los reales usamos real de SIMPLE / UNA presicion ( el de doble precision por ahora no lo usamos)
+read() y write () se usan a partir de f90
+aunque una variable salga de una operacion de otras variables no se asume el tipo de la variable
+al momento de definir le puedo dar un valor y despues  redefinirlo
+pero si uso '' real, parameter : : x=value '' entonces queda fijado para todo el programa
+para definir una palabra uso " caracther (len N) ::  "
+fortran entiende las operaciones básicas pero tambien la raiz cuadrada (SQRT) y otras funciones trigonometricas y exponencial (EXP) y logaritmo (LOG para la natural  LOG10 para base 10)
+si uso una variable entera como salida de una division va a truncar el resultado 
+si a y b son enteros entonces lo puedo calcular como 
+real :: c
+c=real(a)/real(b)
+tambien se puede hacer con float(a)
+EN FORTRAN SIEMPRE HAY Q CERRAR
+CONDICIONAL:
+	existe el if, el if-then-else y el select case (siempre usamos los primeros dos)
+		IF (CONDICION) ACCION A EJECUTAR
+	o 
+		IF (condicion) THEN
+			acciones
+		ELSE 
+			acciones
+		END IF 
+	se puede anidar 
+	
+	SELECT CASE (variable)
+	CASE (valor)
+		acciones
+	CASE (valor2)
+		acciones
+	CASE DEFAULT 
+		acciones
+	END SELECT
+	
+OPERADORES LÓGICOS:
+	< > <= == (igual) /= distinto 
+	.AND. .OR. .NOT. .XOR.
+ESTRUCTURAS DE REPETICION ( do, do while)
+	DO i=inicio, final, incremento !POR DEFECTO EL INCREMENTO ES 1 POR TANTO SI ME SIRVE LO PUEDO OBVIAR
+		sentencias
+	END DO
+	
+	EXTRAS: 
+	CYCLE pasa al siguiente incremento si se cumple alguna setencia
+	EXIT fuerza la salida del DO 
+	
+	se puede poner i= 10,1,-1 para ir de atras para adelante 
+	ARRANCA EN 1
+	tambien se puede anidar (se opera en orden secuencial)
+	NOMBRE: do .... !PARA PONERLE UN NOMBRE AL BUCLE 
+			....
+		end do NOMBRE
+
+FUNCIONES
+	SOLO PUEDEN TENER UN VALOR DE ENTRADA Y UNO DE SALIDA (pero las variables muertas necesarias)
+	FUCTION nombre_fun(arg_entrada) RESULT(valor_salida)
+		implicit none 
+		.
+		.
+		!declaracion de variables
+		.
+		.
+		-
+		-
+		!sentencias
+		-
+		-
+
+	END FUCTION nombre_fun
+	VAN POR AFUERA Y DEBAJO DEL PROGRAM (lo mismo para las subrutinas)
+	para poder usarlaass en el programa tengo que definir la variable que se corresponde con el valor de salida y ademas tengo  q definir la operacion como " external nombre_fun  " 
+Para usar una comparacion con 0 o un entero con una variable real => comparar con 0.
+Para definir las variables externas de una funcion usamos el INTENT IN (para el valor de entrada) y INTENT OUT (para el valor de sálida).
+
+SUBRUTINAS
+	Pueden estar al final del archivo o en un archivo aparte y llamarlas cuando uso otro program
+	LAS SUBRUTINAS PUEDEN TENER VARIOS ARGUMENTOS DE ENTRADA Y DE SALIDA
+	LA LLAMAS DENTRO DEL PROGRAMA CON call nombre_sub_rut(args, varios, etc)
+	SUBROUTINE nombre_sub_rut(....)
+		.
+		.
+		!def variables
+		.
+		.
+		-
+		-
+		!sentencias
+		-
+		-
+	END SUBROUTINE nombre_sub_rut
+	Para poder agregar una subrutina q existe en otro archivo usamos include 'nombre_archivo.f' debajo del end program 
+	
+NUMERICAL RECIPES -> "caja" de subrutinas (en un libro estan los codigos pero ya estan listos para usar no hace falta reescribirlos
+
+.f -> fórmato de Fortran 77, usamos los de esta versión por simplicidad.
+
+ARCHIVOS 
+	Para abrir un archivo:
+		open(unit='unidad',file='nombre',status=''tipo)
+		-
+		-
+		!sentencias
+		-
+		-
+		close (unit)
+	unidad numero asignado
+	tipo = new, old o unknown !EN GRAL USAR UNKNOWN PARA EVITAR PROBLEMAS
+	entonces para leerlo uso read(unit, *), el segundo asterisco es para indentificar que formato de lectura (por ahora no hace falta aclararlo)
+		
+
+
+
