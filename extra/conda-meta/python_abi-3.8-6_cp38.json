@@ -1,0 +1,34 @@
+{
+  "build": "6_cp38",
+  "build_number": 6,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "constrains": [
+    "python 3.8.* *_cpython"
+  ],
+  "depends": [],
+  "extracted_package_dir": "/home/shuly/anaconda3/pkgs/python_abi-3.8-6_cp38",
+  "features": "",
+  "files": [],
+  "fn": "python_abi-3.8-6_cp38.conda",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "link": {
+    "source": "/home/shuly/anaconda3/pkgs/python_abi-3.8-6_cp38",
+    "type": 1
+  },
+  "md5": "630d86b05404bb70a07dd078c99e671a",
+  "name": "python_abi",
+  "package_tarball_full_path": "/home/shuly/anaconda3/pkgs/python_abi-3.8-6_cp38.conda",
+  "paths_data": {
+    "paths": [],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "ba2a95770be75f5a53d263062862dca33f82a2eb9fca7647b7c7cefcbf5c9b89",
+  "size": 6844,
+  "subdir": "linux-64",
+  "timestamp": 1743483189985,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/python_abi-3.8-6_cp38.conda",
+  "version": "3.8"
+}
