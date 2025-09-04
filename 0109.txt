@@ -1,0 +1,39 @@
+FIJARSE QUE EN EL PRACTICO 2 pide que la condicion sobre la mag r sea sobre la magnitud r corregida por extinción
+para hacer la correccion por extincion
+
+MUESTRA COMPLETA POR FLUJO:
+si yo quiero elegir una muestra completa por flujo entonces tengo q revisar q en el grafico e z vs r tener una distribucion aleatoria y que no tenga puntos aislados porque eso implica q esa zona esta submuestrada y que no hay mucha info 
+por ejemplo no podemos tomar r que llegue a mag18 si el sloan espectografico trabaja hasta mag17.77
+
+p3 : brillo superficial (mu50) en la banda r. programa en fortran!!!
+cambiar el archivo de un tipo csv a un archivo separado por espacios (por las dudas) esto lo hacemos por terminal
+
+sed s/','/'  '/g arc_ent.csv > arc_salida.dat
+
+
+wc -l archivo.ext >>> dice cuantas filas tiene el archivo incluyendo los nombres de las columnas
+
+ 
+
+
+
+
+AVERIGUAR: q es magnitud petrosiana q es magnitud model, cual conviene usar para los indices de color, por que no conviene trabajar con la ley de de Vacoulers ( o los datos de esta ley en el sloan)
+REVISAR TODO ESA PARTE, leer la teoria/ especificaciones de cada una de las columnas  
+
+https://www.sdss4.org/dr17/algorithms/magnitudes/#
+
+
+VER Q COMO YO DESCARGUE LA TABLA ESTA MAL. Las magnitudes cumplen la condicion de estar corregidas pero no descargo en si las magnitudes cooregidas
+
+
+PARA EL PRACTICO 1 SUBIR EN EL CLASSROOM SOLAMENTE EL PROGRAMA DE FORTRAN
+
+
+
+
+------! Mis conclusiones !--------
+Entiendo que las magnitudes model estan pensadas para replicar los colores de la galaxia de la mejor manera.
+Como trabajamos con  objetos extendidos tenemos dos formas básicas de definir su magnitud, las models estan hechas para definir una magnitud de la galaxia completa y esto lo hace a partir de fitear modelos de brillo de otras galaxias usando solamente ley de de Vaucoulers y otra solamente usando ley de exponencial y usando el mejor ajuste de ambas 
+
+ 

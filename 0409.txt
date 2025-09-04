@@ -1,0 +1,31 @@
+para trabajar con las tablas de la galaxia tengo q trabajar con magnitud absoluta usando la distancia luminosa 
+para poder obtener dL tengo q interpolar los valores de la tabla q hicimos en el primer practico
+ interpolamos z y la coord comovil y de ahi podemos pasar a la 
+ 
+ real, dimension(n,m) >>> para crear vectores o matrices.
+ 
+ para asignarles los valores siguen la sintaxis:
+ 
+ b = (/0,0,0,0,0/)
+ b = (/(2*i-1,i=1,10)/) !!! para definir a con un bucle
+ 
+ ---------> MÓDULOS <---------
+ SINTAXIS::
+ 
+ 	module nombre
+		declaracion de variables	 	
+ 		sentencias o subrutinas
+ 	
+ 	end module nombre
+ 	
+ Seria algo similar a las librerias de python
+ 
+ Primero va el módulo (o los módulos) luego el program y por último las funciones/subrutinas 
+ 
+ Para llamar al módulo dentro de  un archivo desde el programa o desde una funcion usando la sentencia	 use nombre_modulo	 en la primera linea de codigo dentro del programa/funcion
+ 
+ tambien se puede usar 
+ 	use nombre_modulo only valor/funcion de interes
+ 	
+ 	
+ 	
