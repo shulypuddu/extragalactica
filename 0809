@@ -1,0 +1,17 @@
+common permite q ciertas variables sean comunes tanto al programa como a las funciones q existen en el archivo 
+otra forma de hacerlo es usando modulos 
+PARA INDICES DE COLOR NO CONVIENE USAR MAGNITUDES PETROSIANAS, conviene usar las model xq cubren mas región espacial. 
+Si bien solamente las model ajusta la DE VAUCOULERS O LA EXPONENCIAL es mas util xq hace el modelo para todos los filtros y eso nos permite comparar y para una sola galaxia queda definido el mismo modelo para todos
+
+
+
+si hay que usar magnitudes solas (tipo r vs m) ahi si usamos las petromag
+
+r>1.5'' para que no moleste el seeing
+tamaño de la fibra de espectroscopia es de 55'' 
+magr>14.5 por que essta muy cerca de la resolucion de la fibra optica (en gral las galaxias se encuentran muy cerca y el espectrografo no logra distinguirlas bien)
+y esto provoca q no haya tanta completitud.
+
+
+M=m-ext+dm[Mpc]+C_AB
+tienen que dar en un rango de -10 o -20

@@ -1,8 +1,8 @@
-program cosmo100
+program cosmos
 
 implicit none
 real:: dl, da,  dchi , chi
-real:: H_0=100., c=299792., z
+real:: H_0=70., c=299792., z
 integer :: i 
 external dchi
 
@@ -20,7 +20,7 @@ end do
 close(25)
 
 
-end program cosmo100
+end program cosmos
 
 !____________FUNCION INTEGRANDDO____________________________________________________
 function dchi(z) 

@@ -1,0 +1,4 @@
+common permite q ciertas variables sean comunes tanto al programa como a las funciones q existen en el archivo 
+otra forma de hacerlo es usando modulos 
+PARA INDICES DE COLOR NO CONVIENE USAR MAGNITUDES PETROSIANAS
+
