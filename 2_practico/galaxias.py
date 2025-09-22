@@ -24,19 +24,22 @@ print(galaxias_brillante.to_string())
 #esta galaxia no se xq quedo tan FEA, revisar
 
 #histogramas de indices de color en un mismo figure
-plt.figure(figsize=(10,6))
-plt.xlim(0, 3.5)
-plt.hist(df['color_u_r'], bins=250, alpha=0.5, label='u-r',edgecolor='blue')
-plt.xlabel('Índice de Color (u-r)')
-plt.ylabel('Número de Galaxias')
-plt.title('Distribución de Índice de Color (u-r)')
-plt.legend()
-plt.figure(figsize=(10,6))
-plt.hist(df['color_g_r'], bins=250, alpha=0.5, label='g-r', color='green')
-plt.xlim(-0.6, 1.5)
-plt.xlabel('Índice de Color (g-r)')
-plt.ylabel('Número de Galaxias')
-plt.title('Distribución de Índice de Color (g-r)')
-plt.legend()
+fig, axs = plt.subplots(2, 1, figsize=(14, 18)) # 2 filas, 1 columna
 
+# Primer gráfico: scatter de M_r vs z
+axs[0].hist(df['color_g_r'], bins=700, alpha=0.7, edgecolor='blue',facecolor='none')
+axs[0].set_xlabel('Índice de Color (g-r)')
+axs[0].set_xlim(-0.6, 2)
+axs[0].set_ylabel('Número de Galaxias')
+axs[0].set_title('Histograma color_g_r')
+
+# Segundo gráfico: histograma de color_u_r
+axs[1].hist(df['color_u_r'], bins=400, alpha=0.7, edgecolor='green', facecolor='none')
+axs[1].set_xlabel('Índice de Color (u-r)')
+axs[1].set_xlim(0, 4.5)
+axs[1].set_ylabel('Número de Galaxias')
+axs[1].set_title('Histograma color_u_r')
+
+plt.tight_layout()
 plt.show()
+

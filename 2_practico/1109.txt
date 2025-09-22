@@ -1,0 +1,22 @@
+select top 20000 
+  glx.objID as ID, glx.ra , glx.dec, spec.z , glx.fracDeV_r, spec.velDisp,
+  glx.petroMag_u, glx.petroMag_g, glx.petroMag_r, glx.petroMag_i, glx.petroMag_z, 
+  glx.modelMag_u, glx.modelMag_g, glx.modelMag_r, glx.modelMag_i, glx.modelMag_z,  
+  glx.extinction_u, glx.extinction_g, glx.extinction_r, glx.extinction_i, glx.extinction_z,
+  glx.petroRad_u, glx.petroRad_g, glx.petroRad_r, glx.petroRad_i, glx.petroRad_z,
+  glx.petroR50_r ,  glx.petroR90_r
+  
+into MyDB.pr2
+  
+from galaxy as glx , SpecObj as spec
+ 
+where glx.specObjID!=0 
+  and glx.specObjID = spec.specObjID 
+  and 0.02 < spec.z 
+  and spec.z < 0.05 
+  and 14 < (glx.petroMag_r - glx.extinction_r)
+  and (glx.petroMag_r - glx.extinction_r) < 18
+
+
+ESTE ES EL CODIGO PARA BAJAR LA TABLA POSTA, ANTES ME OLVIDE DE R90 Y BAJE UN PAR DE COSAS 
+DE MAS
