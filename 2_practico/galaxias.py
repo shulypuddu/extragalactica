@@ -21,6 +21,7 @@ plt.plot()
 
 galaxias_brillante = df[df['abs_model_mag_r'] > -15]
 print(galaxias_brillante.to_string())
+#esta galaxia no se xq quedo tan FEA, revisar
 
 #histogramas de indices de color en un mismo figure
 plt.figure(figsize=(10,6))

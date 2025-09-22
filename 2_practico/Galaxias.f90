@@ -72,7 +72,8 @@ do i = 1 , g
   write(35,*) ra,',',dec,',',z,',',c_par,',',fracDeV_r,',', velDisp ,',',&
   (abs_modelMag(k),',',k=1,5),(abs_petroMag(k),',',k=1,5),color_u_r,',',color_g_r,',',&
   mu_sup,',',petroR50_r,',',petroR90_r 
-  
+  !me lo escribe en otro archivo llamado for.35 o for.(nro unidad), para leerlo cambiar a extension csv 
+  !antes de usarlo quitar todos los espacios.
 
 end do
 
