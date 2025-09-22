@@ -10,8 +10,9 @@ external dchi
 open(unit=25,file='cosmos.csv',status='unknown')
 
 write(25,*) 'z',',', 'coord_comovil',',', 'dist_luminosa',',', 'dist_angular '
-do i = 1 , 100 
-z = z +0.001*i
+z=-0.001
+do i = 1 , 6000 
+z = z +0.001
 
 call qromb(dchi,0.,z,chi)
 write(25,*) z ,',',  chi*c/H_0 ,',', chi*(1+z)*c/H_0 ,',', (chi*c)/((1+z)*H_0)
