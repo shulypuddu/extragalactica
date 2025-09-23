@@ -20,3 +20,9 @@ where glx.specObjID!=0
 
 ESTE ES EL CODIGO PARA BAJAR LA TABLA POSTA, ANTES ME OLVIDE DE R90 Y BAJE UN PAR DE COSAS 
 DE MAS
+
+
+DATOS DE LA GALAXIA QUE ELIMINO:
+ dec         z    c_par  fracDeV_r   velDisp  abs_model_mag_u  abs_model_mag_g  abs_model_mag_r  abs_model_mag_i  abs_model_mag_z  abs_petro_mag_u  abs_petro_mag_g  abs_petro_mag_r  abs_petro_mag_i  abs_petro_mag_z  color_u_r  color_g_r    mu_sup  petroR50_r  petroR90_r
+13703  3.993249 -0.309589  0.039734  1.69797   0.145244  15.95726       -18.810207       -19.277472       -12.934792       -10.998447        -11.04281       -17.086918       -20.179161       -20.517073        -3.417797        -5.326661  -5.875416   -6.34268 -8.778539   73.460876  124.734367
+(no solo es feo su M_r sino tambien sus indices de  color.)
