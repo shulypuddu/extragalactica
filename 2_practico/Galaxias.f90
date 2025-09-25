@@ -65,7 +65,7 @@ do i = 1 , g
   c_par=petroR90_r/petroR50_r
   color_g_r=abs_modelMag(2)-abs_modelMag(3)
   color_u_r=abs_modelMag(1)-abs_modelMag(3)
-  mu_sup= abs_petroMag(3) + 2.5*log10(2*pi*(petroR50_r)**2) + corr_ab(3)
+  mu_sup= petroMag(3) + 2.5*log10(2*pi*(petroR50_r)**2) + corr_ab(3)
   petroR50_r= petroR50_r* ( (pi/180.)/3600.) * dA*1000  !de arcsec a radianes a kpc 
   petroR90_r= petroR90_r* ( (pi/180.)/3600.) * dA*1000  
 
