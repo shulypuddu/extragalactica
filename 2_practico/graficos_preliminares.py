@@ -40,6 +40,3 @@ plt.ylabel("Magnitud corregida en r (r_corregido)")
 plt.title("Magnitud corregida vs Redshift")
 plt.grid(True)
 plt.show()
-
-
-# %%
