@@ -13,7 +13,7 @@ implicit none
 integer :: i, j,  k
 character(len=21):: ID 
 !guardamos los ID de las galaxias como texto xq tienen una longitud de caracteres mayor a la de un integer y es una paja usar un real
-real :: coord, dA
+real :: coord
 
 real :: fracDeV_r, velDisp, ra, dec, mu_sup
 real, dimension(5) :: petroMag, extinction, modelMag,petroMag_s_ext,modelMag_s_ext , corr_ab=(/-0.036,0.012,0.010,0.028,0.040/)
@@ -54,7 +54,6 @@ do i = 1 , g
 
   chi=coord(z)
   dL= (1.+z)*chi
-  dA= chi/(1.+z)
 
   do k=1,5
     abs_modelMag(k)=modelMag_s_ext(k)-5*log10(dL)-25+corr_ab(k)

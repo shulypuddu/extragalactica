@@ -1,0 +1,52 @@
+-------------FUNCION DE LUMINOSIDAD----------------
+EJERCICIO 1: para el informe
+Binggeli es un review i.e. es una recolección de lo que se sabía hasta el momento.
+Willmer presenta algunos momentos mas modernos q se utilizan hoy en dia, nosotros vamos a usar el método mas sencillo pero de los menos usados.
+Estos 2 son la base para este practico. Los otros papers son para complementar.
+
+EJERCICIO 2:
+Solo vamos a trabajar con la magnitud r por simplicidad.
+las correcciones K del SDSS estan hechas segun Blanton poor eso es q vamos a comparar con los valores de su paper.
+Para graficar usar solamente el 10% de los datos xq van a ser MUCHOS.
+Vamos mas lejos en z. Por tanto tengo q ir mas alla con las correcciones.
+
+--------Distribuciones espectrales de energía------
+DN4000 > muy caracteristico de las elipticas.
+
+Rest-frame > sist. de ref. de reposo, similar a cuando desafectamos de la distancia moviendolas toda a la misma distancia. En muchos casos se usa z=0.0 EN SLOAN la mayoria de las galaxias estan vistas a z=0.1 por tanto usamos ese z para hacer las menores correcciones posibles.
+
+
+>> Luz de una galaxia:
+Correcciones:
+	1)- extincion por la via lactea
+	2)- correccion K (debido al z, no solo por el corrimiento al rojo sino tambien por que el espectro se deforma debido al z)
+	
+>> Corrección K:
+Oke & Sandage 1968 > fórmula de la correción K
+
+m - M = 5log(dL)-5+K(z) + etc..
+(la sumamos con el signo correspondiente)
+
+>>Corrección por evolución: NO LO VAMOS A HACER.
+
+>> FUNCION DE LUMINOSIDAD:
+es una distribucion de probabilidad por unidad d volumen, se la ienf¡tifica con FL o phi(L)
+
+	! Método clásico (1/V_max):
+Partimos de una muestra completa por flujo (Map vs z) 
+la cual es un problema pues es en donde pierdo las galaxias mas débiles.
+
+Bias de Malmquist.
+
+Supone que la distribucion de las galaxias en el espacio es uniforme. Basicamente es una suma pesada, donde las debiles son mas pesadas que las brillantes.
+ 
+Vamos a sacar el z maximo o limite para el cual sigo viendo una galaxia de una cierta magnitud absoluta. Este z me define un volumen maximo con el cual yo puedo trabajar para esa galaxia.
+
+-------> Graficos de las correciones K tambien esta en el Blanton como para comparar a rasgos generales (no pensar que son el mismo tipo de galaxias)
+
+
+Header de la tabla de datos:
+ z,petro_r,red_r,r50,(rk_p(k),k=1,5),(rks_p(k),k=1,5)
+
+
+

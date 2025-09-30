@@ -56,75 +56,6 @@ tardias = df[df['c_par'] < 2.5]
 bulge = df[df['fracDeV_r'] >= 0.8]
 disco = df[df['fracDeV_r']<= 0.2]
 
-#%% ---------Diagrama de redshift vs magnitud absoluta
-plt.figure(figsize=(10,6))
-plt.scatter(df['z'],df['abs_model_mag_r'], s=1, color='m', marker='.',alpha=0.75)
-plt.xlabel('Redshift ($z$)', fontsize=14)
-plt.ylabel('Magnitud absoluta ($M_r$)', fontsize=14)
-plt.title('Diagrama de Redshift vs Magnitud Absoluta',fontsize=17)
-plt.tight_layout()
-
-plt.gca().invert_yaxis()  
-plt.show()  
-
-#%% ----------histogramas de indices de color en un mismo figure
-fig, axs = plt.subplots(2, 1, figsize=(14, 18)) # 2 filas, 1 columna
-
-# Primer gráfico: scatter de M_r vs z
-axs[0].hist(df['color_g_r'], bins='auto', edgecolor='m',facecolor='lavender',density=True)
-axs[0].set_xlabel('Índice de Color (g-r)',fontsize='large')
-axs[0].set_xlim(-0.25, 1.25)
-axs[0].set_ylabel('Número de Galaxias',fontsize='large')
-axs[0].set_title('Histograma color_g_r',fontsize=16)
-
-# Segundo gráfico: histograma de color_u_r
-axs[1].hist(df['color_u_r'], bins='auto',edgecolor='m', facecolor='lavender',density=True)
-axs[1].set_xlabel('Índice de Color (u-r)',fontsize='large')
-axs[1].set_xlim(0, 3.65)
-axs[1].set_ylabel('Número de Galaxias',fontsize='large')
-axs[1].set_title('Histograma color_u_r',fontsize=16)
-
-plt.tight_layout()
-plt.show()
-
-#Ahora voy a ajustar una doble gaussiana a cada figura
-#%%
-# Supón que tus datos están en la variable color_u_r
-
-# Graficar
-plt.hist(color_u_r, bins='auto', density=True, edgecolor='m', facecolor='lavender', label='Datos')
-plt.plot(x_fit, doble_gaussiana(x_fit, *params), label='Ajuste Doble Gaussiana', color='darkslategray')
-plt.plot(x1_fit, g_azul,  label='Doble Gaussiana',color='dodgerblue') 
-plt.plot(x2_fit, g_rojo, color='indianred', label='Doble Gaussiana') 
-plt.xlim(0, 4)
-plt.xlabel('color_u_r', fontsize=14) 
-plt.ylabel('Densidad', fontsize=14)
-plt.title('Ajuste gaussiano a cada pico de color',fontsize=17)
-plt.show()
-
-#%% -------------Ahora separo por galaxias rojas y azules
-
-fig, axs = plt.subplots(2, 1, figsize=(14, 18)) # 2 filas, 1 columna
-# Primer gráfico: scatter de M_r vs z
-axs[0].hist(rojo['color_g_r'], bins='auto',density=True, alpha=0.55,facecolor='indianred',edgecolor='indianred')
-axs[0].hist(azul['color_g_r'], bins='auto',density=True, alpha=0.55,facecolor='dodgerblue',edgecolor='dodgerblue')
-axs[0].set_xlabel('Índice de Color (g-r)', fontsize=14)
-axs[0].set_xlim(0, 1)
-axs[0].set_ylabel('Número de Galaxias', fontsize=14)
-axs[0].set_title('Histograma color_g_r', fontsize=17)
-# Segundo gráfico: histograma de color_u_r
-axs[1].hist(rojo['color_u_r'], bins='auto',density=True, alpha=0.55,facecolor='indianred',edgecolor='indianred')
-axs[1].hist(azul['color_u_r'], bins='auto',density=True, alpha=0.55,facecolor='dodgerblue',edgecolor='dodgerblue')
-axs[1].set_xlabel('Índice de Color (u-r)', fontsize=14)
-axs[1].set_xlim(0.5,3.25)
-axs[1].set_ylabel('Número de Galaxias', fontsize=14)
-axs[1].set_title('Histograma color_u_r', fontsize=17)
-
-plt.tight_layout()
-plt.show()
-
-#%% ----Para definir los cuartiles (a simple vista) hago un histograma con 4 bines para la abs. mag.
-plt.hist(df['abs_model_mag_r'],bins=4,density=True)
 def separar_cuartiles_numpy(datos):
     """
     Separa datos en cuartiles usando NumPy
@@ -154,6 +85,108 @@ def separar_cuartiles_numpy(datos):
     }
 mag_r_quartiles=separar_cuartiles_numpy(df['abs_petro_mag_r'])
 
+def ajuste_lineal(x,y):
+    """
+    --Parámetros--
+    x, y : tipo array - lista de datos para ajustar
+    
+    
+    --Retorna-- 
+    Lista de parametros y errores
+
+    """
+    _y=np.log(y)
+    param,pcov = np.polyfit(x,_y,1,cov=True)
+
+    return param[0]*x+param[1]
+
+
+lineal_rojo= ajuste_lineal(rojo['abs_model_mag_r'],rojo['petroR50_r'])
+lineal_azul= ajuste_lineal(azul['abs_model_mag_r'],azul['petroR50_r'])
+lineal_tempranas= ajuste_lineal(tempranas['abs_model_mag_r'],tempranas['petroR50_r'])
+lineal_tardias= ajuste_lineal(tardias['abs_model_mag_r'],tardias['petroR50_r'])
+lineal_bulge= ajuste_lineal(bulge['abs_model_mag_r'],bulge['petroR50_r'])
+lineal_disco= ajuste_lineal(disco['abs_model_mag_r'],disco['petroR50_r'])
+
+
+
+#%% ---------Diagrama de redshift vs magnitud absoluta
+plt.figure(figsize=(10,6))
+plt.scatter(df['z'],df['abs_model_mag_r'], s=1, color='m', marker='.',alpha=0.75)
+plt.xlabel('Redshift ($z$)', fontsize=14)
+plt.ylabel('Magnitud absoluta ($M_r$)', fontsize=14)
+plt.title('Diagrama de Redshift vs Magnitud Absoluta',fontsize=17)
+plt.tight_layout()
+plt.gca().invert_yaxis()  
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/mabs_vs_z.png', dpi=300,bbox_inches='tight')
+
+plt.show()  
+
+#%% ----------histogramas de indices de color en un mismo figure
+fig, axs = plt.subplots(2, 1, figsize=(14, 18)) # 2 filas, 1 columna
+
+# Primer gráfico: scatter de M_r vs z
+axs[0].hist(df['color_g_r'], bins='auto', edgecolor='m',facecolor='lavender',density=True)
+axs[0].set_xlabel('Índice de Color (g-r)',fontsize='large')
+axs[0].set_xlim(-0.25, 1.25)
+axs[0].set_ylabel('Número de Galaxias',fontsize='large')
+axs[0].set_title('Histograma color_g_r',fontsize=16)
+
+# Segundo gráfico: histograma de color_u_r
+axs[1].hist(df['color_u_r'], bins='auto',edgecolor='m', facecolor='lavender',density=True)
+axs[1].set_xlabel('Índice de Color (u-r)',fontsize='large')
+axs[1].set_xlim(0, 3.65)
+axs[1].set_ylabel('Número de Galaxias',fontsize='large')
+axs[1].set_title('Histograma color_u_r',fontsize=16)
+
+plt.tight_layout()
+
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/colores.png', dpi=300,bbox_inches='tight')
+
+plt.show()
+
+#Ahora voy a ajustar una doble gaussiana a cada figura
+#%%
+# Supón que tus datos están en la variable color_u_r
+
+# Graficar
+plt.hist(color_u_r, bins='auto', density=True, edgecolor='m', facecolor='lavender', label='Datos')
+plt.plot(x_fit, doble_gaussiana(x_fit, *params), label='Ajuste Doble Gaussiana', color='darkslategray')
+plt.plot(x1_fit, g_azul,  label='Doble Gaussiana',color='dodgerblue') 
+plt.plot(x2_fit, g_rojo, color='indianred', label='Doble Gaussiana') 
+plt.xlim(0, 4)
+plt.xlabel('color_u_r', fontsize=14) 
+plt.ylabel('Densidad', fontsize=14)
+plt.title('Ajuste gaussiano a cada pico de color',fontsize=17)
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/colores_ajustados.png', dpi=300,bbox_inches='tight')
+
+plt.show()
+
+#%% -------------Ahora separo por galaxias rojas y azules
+
+fig, axs = plt.subplots(2, 1, figsize=(14, 18)) # 2 filas, 1 columna
+# Primer gráfico: scatter de M_r vs z
+axs[0].hist(rojo['color_g_r'], bins='auto',density=True, alpha=0.55,facecolor='indianred',edgecolor='indianred')
+axs[0].hist(azul['color_g_r'], bins='auto',density=True, alpha=0.55,facecolor='dodgerblue',edgecolor='dodgerblue')
+axs[0].set_xlabel('Índice de Color (g-r)', fontsize=14)
+axs[0].set_xlim(0, 1)
+axs[0].set_ylabel('Número de Galaxias', fontsize=14)
+axs[0].set_title('Histograma color_g_r', fontsize=17)
+# Segundo gráfico: histograma de color_u_r
+axs[1].hist(rojo['color_u_r'], bins='auto',density=True, alpha=0.55,facecolor='indianred',edgecolor='indianred')
+axs[1].hist(azul['color_u_r'], bins='auto',density=True, alpha=0.55,facecolor='dodgerblue',edgecolor='dodgerblue')
+axs[1].set_xlabel('Índice de Color (u-r)', fontsize=14)
+axs[1].set_xlim(0.5,3.25)
+axs[1].set_ylabel('Número de Galaxias', fontsize=14)
+axs[1].set_title('Histograma color_u_r', fontsize=17)
+
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/rojas_y_azules.png', dpi=300,bbox_inches='tight')
+plt.tight_layout()
+plt.show()
+
+#%% ----Para definir los cuartiles (a simple vista) hago un histograma con 4 bines para la abs. mag.
+plt.hist(df['abs_model_mag_r'],bins=4,density=True)
+
 
 #%%
 #-----------------------------------------------------------------
@@ -162,6 +195,7 @@ plt.figure(figsize=(10,6))
 plt.hist(df['c_par'], bins='auto',edgecolor='m',facecolor='lavender', density=True)
 plt.xlim(1.15,4.0)
 plt.title('Distribución del parámetro de concentración (C)')
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/hist_c.png', dpi=300,bbox_inches='tight')
 
 #fracDeV habla de cuanto bulge hay en la galaxia.
 
@@ -169,12 +203,15 @@ plt.figure(figsize=(10,6))
 plt.hist(df['fracDeV_r'], bins='auto',edgecolor='m',facecolor='lavender', density=True)
 plt.xlim(-0.0001,1.0001)
 plt.title('Distribución del parámetro fracDeV en el filtro r')
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/hist_fracdev.png', dpi=300,bbox_inches='tight')
+
 
 plt.figure(figsize=(10,6))
 plt.scatter(df['c_par'],df['fracDeV_r'], marker='.',color='m',alpha=0.5)
 plt.xlabel('Parámetro de concentración (C)')
 plt.ylabel('Frac de V')
 plt.xlim(0.75,4)
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/fracdev_vs_c.png', dpi=300,bbox_inches='tight')
 
 #%% Creo que este es el que pide en el inciso donde habla de correlación
 #Todo esto hay que hacerlo ya separando segun si son de la nube azul o de la secuencia roja 
@@ -189,6 +226,8 @@ plt.ylabel('(C)')
 plt.xlabel('Indice de color u-r')
 plt.xlim(0.25,3.5)
 plt.ylim(1.25,4.15)
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/ur_vs_c.png', dpi=300,bbox_inches='tight')
+
 
 plt.figure(figsize=(10,6))
 plt.scatter(df['color_g_r'],df['c_par'], marker='.',color='m')
@@ -198,6 +237,7 @@ plt.ylabel('(C)')
 plt.xlabel('Indice de color g-r')
 plt.xlim(-0.25,1.5)
 plt.ylim(1.25,4.15)
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/gr_vs_c.png', dpi=300,bbox_inches='tight')
 
 
 #%% DIAGRAMA COLOR MAGNITUD
@@ -211,6 +251,7 @@ plt.ylabel('$M_r$')
 plt.title('Diagrama color - magnitud')
 plt.gca().invert_yaxis()  # Invertir eje Y (magnitud)
 plt.plot()
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/dcm_ur.png', dpi=300,bbox_inches='tight')
 plt.show()
 
 plt.figure(figsize=(10,6))
@@ -223,6 +264,7 @@ plt.ylabel('$M_r$')
 plt.title('Diagrama color - magnitud')
 plt.gca().invert_yaxis()  # Invertir eje Y (magnitud)
 plt.plot()
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/dcm_gr.png', dpi=300,bbox_inches='tight')
 plt.show()
 
 
@@ -232,39 +274,41 @@ plt.show()
 plt.figure(figsize=(10,6))
 plt.scatter(df['abs_model_mag_r'], df['petroR50_r'], s=1, color='m', marker='.')
 plt.yscale('log')
-plt.ylim(0,10)
+plt.ylim(1,10)
 plt.ylabel('Radio petrosiano 50$\%$')
 plt.xlabel('Magnitud absoluta en r ($M_r$)')
 plt.title('Diagrama de Magnitud Absoluta vs Radio ($50\%$)')
-plt.plot()
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/mabs_vs_r50.png', dpi=300,bbox_inches='tight')
 
 plt.figure(figsize=(10,6))
 plt.scatter(rojo['abs_model_mag_r'], rojo['petroR50_r'], s=1, color='indianred', marker='.',alpha=0.5)
 plt.scatter(azul['abs_model_mag_r'], azul['petroR50_r'], s=1, color='dodgerblue', marker='.',alpha=0.5)
 plt.yscale('log')
-plt.ylim(0,10)
+plt.plot(azul['abs_model_mag_r'],lineal_azul,color='dodgerblue')
+plt.ylim(1,10)
 plt.ylabel('Radio petrosiano 50$\%$')
 plt.xlabel('Magnitud absoluta en r ($M_r$)')
 plt.title('Diagrama de Magnitud Absoluta vs Radio ($50\%$)')
-plt.plot()
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/mabs_vs_r50_azulyrojo.png', dpi=300,bbox_inches='tight')
 
 plt.figure(figsize=(10,6))
 plt.scatter(tempranas['abs_model_mag_r'],tempranas['petroR50_r'], s=1, color='teal', marker='.',alpha=0.5)
 plt.scatter(tardias['abs_model_mag_r'], tardias['petroR50_r'], s=1, color='hotpink', marker='.',alpha=0.5)
 plt.yscale('log')
-plt.ylim(0,10)
+plt.ylim(1,10)
 plt.ylabel('Radio petrosiano 50$\%$')
 plt.xlabel('Magnitud absoluta en r ($M_r$)')
 plt.title('Diagrama de Magnitud Absoluta vs Radio ($50\%$)')
-plt.plot()
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/mabs_vs_r50_earlyylate.png', dpi=300,bbox_inches='tight')
 
 
 plt.figure(figsize=(10,6))
 plt.scatter(bulge['abs_model_mag_r'],bulge['petroR50_r'], s=1, color='darkorange', marker='.',alpha=0.5)
 plt.scatter(disco['abs_model_mag_r'], disco['petroR50_r'], s=1, color='royalblue', marker='.',alpha=0.5)
 plt.yscale('log')
-plt.ylim(0,10)
+plt.ylim(1,10)
 plt.ylabel('Radio petrosiano 50$\%$')
 plt.xlabel('Magnitud absoluta en r ($M_r$)')
 plt.title('Diagrama de Magnitud Absoluta vs Radio ($50\%$)')
 plt.plot()
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/mabs_vs_r50_bulgeydisco.png', dpi=300,bbox_inches='tight')
