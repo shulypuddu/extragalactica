@@ -12,7 +12,7 @@ use lista
 implicit none
 integer :: i, j,  k
 character(len=21):: ID 
-!guardamos los ID de las galaxias como texto xq tienen una longitud de caracteres mayor a la de un integer y es una paja usar un real
+!guardamos los ID de las galaxias como texto xq tienen una longitud de caracteres mayor a la de un integer
 real :: coord
 
 real :: fracDeV_r, velDisp, ra, dec, mu_sup
@@ -81,7 +81,7 @@ close(30)
 
 end program galaxies
 
-!_______________________________________FUNCION INTERPOLACION___________________________________________________
+!_________________________FUNCION INTERPOLACION___________________________________________
 function coord(x)
 use lista
 implicit none

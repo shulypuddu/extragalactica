@@ -5,11 +5,13 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 galaxias = pd.read_table('/mnt/sda2/extragalactica/3_practico/datos.dat', sep=r'\s+')
-head_gal = ' z,petro_r,red_r,r50,rk_p_u,rk_p_g,rk_p_r,rk_p_i,rk_p_z,rks_p_u,rks_p_g,rks_p_r,rks_p_i,rks_p_z'
+head_gal = 'z,petro_r,red_r,r50,rk_p_u,rk_p_g,rk_p_r,rk_p_i,rk_p_z,rks_p_u,rks_p_g,rks_p_r,rks_p_i,rks_p_z'
 galaxias.columns= head_gal.split(',')
 
 #%%
 muestra_10 = galaxias.sample(frac=0.1,random_state=252)
 print(f'Tamaño de la muestra: {len(muestra_10)}')
-print(muestra_10.head())
-plt.plot(muestra_10['z'],muestra_10['rk_p_r'], 'r--')
+print(galaxias.columns)
+plt.axhline(y=0,color='k')
+plt.scatter(muestra_10['z'],muestra_10['rk_p_r'], marker='.',color='r',alpha=0.5)
+plt.scatter(muestra_10['z'],muestra_10['rks_p_r'], marker='.',color='b',alpha=0.5)

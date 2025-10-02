@@ -10,6 +10,9 @@ head= 'ra,dec,z,c_par,fracDeV_r,velDisp,abs_model_mag_u,abs_model_mag_g,abs_mode
 
 #leo el archivo. Paso el head como los nombres aclarando que el nombre de cada columna esta separado por una coma.
 df0 = pd.read_csv('/mnt/sda2/extragalactica/2_practico/galaxias_finales.csv', names=head.split(','), skiprows=1)
+bar_color="#7166D1"
+edge_color= "#695ED1"
+linea_color='tomato'
 
 galaxias_brillante = df0[df0['abs_model_mag_r'] > -15]
 #esta galaxia no se xq quedo tan FEA, asique la filtro
@@ -112,7 +115,7 @@ lineal_disco= ajuste_lineal(disco['abs_model_mag_r'],disco['petroR50_r'])
 
 #%% ---------Diagrama de redshift vs magnitud absoluta
 plt.figure(figsize=(10,6))
-plt.scatter(df['z'],df['abs_model_mag_r'], s=1, color='m', marker='.',alpha=0.75)
+plt.scatter(df['z'],df['abs_model_mag_r'], s=1, color=bar_color, marker='.',alpha=0.75)
 plt.xlabel('Redshift ($z$)', fontsize=14)
 plt.ylabel('Magnitud absoluta ($M_r$)', fontsize=14)
 plt.title('Diagrama de Redshift vs Magnitud Absoluta',fontsize=17)
@@ -126,14 +129,14 @@ plt.show()
 fig, axs = plt.subplots(2, 1, figsize=(14, 18)) # 2 filas, 1 columna
 
 # Primer gráfico: scatter de M_r vs z
-axs[0].hist(df['color_g_r'], bins='auto', edgecolor='m',facecolor='lavender',density=True)
+axs[0].hist(df['color_g_r'], bins='auto', edgecolor=edge_color,facecolor=bar_color,density=True)
 axs[0].set_xlabel('Índice de Color (g-r)',fontsize='large')
 axs[0].set_xlim(-0.25, 1.25)
 axs[0].set_ylabel('Número de Galaxias',fontsize='large')
 axs[0].set_title('Histograma color_g_r',fontsize=16)
 
 # Segundo gráfico: histograma de color_u_r
-axs[1].hist(df['color_u_r'], bins='auto',edgecolor='m', facecolor='lavender',density=True)
+axs[1].hist(df['color_u_r'], bins='auto',edgecolor=edge_color, facecolor=bar_color,density=True)
 axs[1].set_xlabel('Índice de Color (u-r)',fontsize='large')
 axs[1].set_xlim(0, 3.65)
 axs[1].set_ylabel('Número de Galaxias',fontsize='large')
@@ -150,7 +153,7 @@ plt.show()
 # Supón que tus datos están en la variable color_u_r
 
 # Graficar
-plt.hist(color_u_r, bins='auto', density=True, edgecolor='m', facecolor='lavender', label='Datos')
+plt.hist(color_u_r, bins='auto', density=True, edgecolor=edge_color, facecolor=bar_color, label='Datos')
 plt.plot(x_fit, doble_gaussiana(x_fit, *params), label='Ajuste Doble Gaussiana', color='darkslategray')
 plt.plot(x1_fit, g_azul,  label='Doble Gaussiana',color='dodgerblue') 
 plt.plot(x2_fit, g_rojo, color='indianred', label='Doble Gaussiana') 
@@ -192,7 +195,7 @@ plt.hist(df['abs_model_mag_r'],bins=4,density=True)
 #-----------------------------------------------------------------
 # Histograma de las distribuciones del parámetro de concentración y de fracDeV
 plt.figure(figsize=(10,6))
-plt.hist(df['c_par'], bins='auto',edgecolor='m',facecolor='lavender', density=True)
+plt.hist(df['c_par'], bins='auto',edgecolor=edge_color,facecolor=bar_color, density=True)
 plt.xlim(1.15,4.0)
 plt.title('Distribución del parámetro de concentración (C)')
 plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/hist_c.png', dpi=300,bbox_inches='tight')
@@ -200,14 +203,14 @@ plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/hist_c.png', dpi=300,b
 #fracDeV habla de cuanto bulge hay en la galaxia.
 
 plt.figure(figsize=(10,6))
-plt.hist(df['fracDeV_r'], bins='auto',edgecolor='m',facecolor='lavender', density=True)
+plt.hist(df['fracDeV_r'], bins='auto',edgecolor=edge_color,facecolor=bar_color, density=True)
 plt.xlim(-0.0001,1.0001)
 plt.title('Distribución del parámetro fracDeV en el filtro r')
 plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/hist_fracdev.png', dpi=300,bbox_inches='tight')
 
 
 plt.figure(figsize=(10,6))
-plt.scatter(df['c_par'],df['fracDeV_r'], marker='.',color='m',alpha=0.5)
+plt.scatter(df['c_par'],df['fracDeV_r'], marker='.',color=bar_color,alpha=0.5)
 plt.xlabel('Parámetro de concentración (C)')
 plt.ylabel('Frac de V')
 plt.xlim(0.75,4)
@@ -219,7 +222,7 @@ plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/fracdev_vs_c.png', dpi
 #plt.title()
 
 plt.figure(figsize=(10,6))
-plt.scatter(df['color_u_r'],df['c_par'], marker='.',color='m')
+plt.scatter(df['color_u_r'],df['c_par'], marker='.',color=bar_color)
 #plt.scatter(rojo['color_u_r'],rojo['c_par'],marker='.',color='indianred',alpha=0.5)
 #plt.scatter(azul['color_u_r'],azul['c_par'],marker='.',color='dodgerblue',alpha=0.5)
 plt.ylabel('(C)')
@@ -230,7 +233,7 @@ plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/ur_vs_c.png', dpi=300,
 
 
 plt.figure(figsize=(10,6))
-plt.scatter(df['color_g_r'],df['c_par'], marker='.',color='m')
+plt.scatter(df['color_g_r'],df['c_par'], marker='.',color=bar_color)
 plt.scatter(rojo['color_g_r'],rojo['c_par'],marker='.',color='indianred',alpha=0.5)
 plt.scatter(azul['color_g_r'],azul['c_par'],marker='.',color='dodgerblue',alpha=0.5)
 plt.ylabel('(C)')
@@ -242,7 +245,7 @@ plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/gr_vs_c.png', dpi=300,
 
 #%% DIAGRAMA COLOR MAGNITUD
 plt.figure(figsize=(10,6))
-plt.scatter(df['color_u_r'],df['abs_petro_mag_r'],  marker='.',color='m',alpha=0.5)
+plt.scatter(df['color_u_r'],df['abs_petro_mag_r'],  marker='.',color=bar_color,alpha=0.5)
 plt.scatter(rojo['color_u_r'],rojo['abs_petro_mag_r'],  marker='.',color='indianred',alpha=0.5)
 plt.scatter(azul['color_u_r'],azul['abs_petro_mag_r'], marker='.',color='dodgerblue',alpha=0.5)
 plt.xlim(0,4)
@@ -255,7 +258,7 @@ plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/dcm_ur.png', dpi=300,b
 plt.show()
 
 plt.figure(figsize=(10,6))
-plt.scatter(df['color_g_r'],df['abs_petro_mag_r'],  marker='.',color='m',alpha=0.5)
+plt.scatter(df['color_g_r'],df['abs_petro_mag_r'],  marker='.',color=bar_color,alpha=0.5)
 plt.scatter(rojo['color_g_r'],rojo['abs_petro_mag_r'],  marker='.',color='indianred',alpha=0.5)
 plt.scatter(azul['color_g_r'],azul['abs_petro_mag_r'], marker='.',color='dodgerblue',alpha=0.5)
 plt.xlim(-0.25,1.25)
@@ -272,7 +275,7 @@ plt.show()
 #%%
 
 plt.figure(figsize=(10,6))
-plt.scatter(df['abs_model_mag_r'], df['petroR50_r'], s=1, color='m', marker='.')
+plt.scatter(df['abs_model_mag_r'], df['petroR50_r'], s=1, color=bar_color, marker='.')
 plt.yscale('log')
 plt.ylim(1,10)
 plt.ylabel('Radio petrosiano 50$\%$')
