@@ -1,0 +1,66 @@
+\documentclass[twocolumn]{article}
+%\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{microtype}
+\usepackage{etoolbox}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+\usepackage{abstract}
+\usepackage{geometry}
+\usepackage{booktabs}
+%Ubicacion de los graficos 
+\graphicspath{ {imagenes/} }
+
+% DEFINIR LOS COMANDOS QUE FALTAN
+\providecommand{\apjs}{ApJ Suppl. Ser.}
+\providecommand{\aj}{Astron. J.}
+\providecommand{\apj}{Astrophys. J.}
+\providecommand{\apjl}{Astrophys. J. Lett.}
+\providecommand{\aap}{Astron. Astrophys.}
+\providecommand{\mnras}{Mon. Not. R. Astron. Soc.}
+\providecommand{\pasa}{Publications of the Astronomical Society of Australia}
+% Configuración de página
+\geometry{a4paper, margin=1in}
+
+% Configuración de encabezados
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Morfología y propiedades de galaxias en Sloan}
+\fancyhead[R]{\small \thepage}
+\fancyfoot[C]{\footnotesize Astronomía Extragaláctica - 2025 - J.M. Puddu }
+
+% Configuración del abstract para una columna
+\renewcommand{\abstractname}{Abstract}
+\setlength{\absleftindent}{0pt}
+\setlength{\absrightindent}{0pt}
+
+\title{Propiedades generales de galaxias usando el catálogo SDSS}
+\author{J.M. Puddu \\ FAMAF - Universidad Nacional de Córdoba - Argentina}
+
+\begin{document}
+
+\twocolumn[
+\begin{@twocolumnfalse}
+    \maketitle
+    \begin{abstract}
+        \noindent funcion de luminosidad de galaxias
+        \vspace{0.5em}
+        \noindent\textbf{Palabras clave}: Galaxias, Morfología, SDSS, Astronomía extragaláctica
+    \end{abstract}
+    \vspace{2em} % Espacio después del abstract
+\end{@twocolumnfalse}
+]
+
+\section{Introducción}
+Realmente no se que escribir aca jaja 
+\citep{1926ApJ....64..321H}
+
+
+\bibliographystyle{plainnat}
+\bibliography{bibliografia}
+
+\end{document}

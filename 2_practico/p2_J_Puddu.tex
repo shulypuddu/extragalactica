@@ -38,7 +38,7 @@
 \setlength{\absleftindent}{0pt}
 \setlength{\absrightindent}{0pt}
 
-\title{Morfología y propiedades de galaxias en Sloan}
+\title{Propiedades generales de galaxias usando el catálogo SDSS}
 \author{J.M. Puddu \\ FAMAF - Universidad Nacional de Córdoba - Argentina}
 
 \begin{document}
@@ -47,10 +47,9 @@
 \begin{@twocolumnfalse}
     \maketitle
     \begin{abstract}
-        \noindent Este trabajo presenta una implementación computacional de métodos estadísticos para el análisis de la morfología y propiedades de galaxias utilizando datos del Sloan Digital Sky Survey (SDSS). Se estudian las características visuales y espectroscópicas de galaxias con el objetivo de comprender los procesos físicos subyacentes y extraer información relevante para estudios extragalácticos.
-        
+        \noindent Este trabajo presenta un análisis estadístico de la morfología y propiedades de galaxias utilizando datos del Sloan Digital Sky Survey (SDSS). Se estudian características fotométrics y espectroscópicas de una muestra de 20,000 galaxias con el objetivo de extraer información relevante para estudios extragalácticos. Se analizan parámetros morfológicos, distribución de colores, relaciones tamaño-luminosidad y diagramas color-magnitud, identificando correlaciones entre las propiedades estructurales y poblaciones estelares.
         \vspace{0.5em}
-        \noindent\textbf{Palabras clave}: Galaxias, Morfología, SDSS, Astronomía extragaláctica, Análisis estadístico
+        \noindent\textbf{Palabras clave}: Galaxias, Morfología, SDSS, Astronomía extragaláctica
     \end{abstract}
     \vspace{2em} % Espacio después del abstract
 \end{@twocolumnfalse}
@@ -58,14 +57,17 @@
 
 \section{Introducción}
 
-Como con todo objeto de estudio de la astronomía para inferir los procesos físicos que ocurren dentro de una galaxia es necesario comprender a profundidad las características ``visuales'' que esta tiene. Al observarlas, ya sea de forma directa o utilizando espectroscopía obtenemos información de manera indirecta.
+Para inferir los procesos físicos que ocurren dentro de una galaxia es necesario comprender en profundidad las características ``visuales'' que esta presenta. Al observarlas, ya sea de forma directa o utilizando espectroscopía, obtenemos información de manera indirecta sobre su estructura y composición.
 
-En el día a día son los catálogos o \textit{surveys} los encargados de extraer la versión más primitiva de esta información y cada uno lo hace con su propio criterio, es por eso que este trabajo toma como objetivo comprender estas primeras características y como obtener información relevante sobre las galaxias en general a partir de estas.
+Los catálogos o \textit{surveys} son los encargados de extraer la versión más primitiva de esta información, cada uno con su propio criterio. Este trabajo tiene como objetivo ejemplificar como obtener datos de estos catálogos y comprender estas características fundamentales e información relevante sobre las galaxias en general a partir de ellas.
 
 
-\subsection{SDSS}
+\subsection{Sloan Digital Sky Survey (SDSS)}
 
-Hoy en día uno de los catálogos más relevantes y con mayor trayectoria en el área es el  Sloan Digital Sky Survey (SDSS), cuyo telescopio de 3.5 metros de diámetro  ubicado en una montaña a 2788 metros sobre el nivel del mar se encuentra en el Observatorio de Apache Point en Sunspot, Nuevo Mexico. Este contiene 19 \textit{Data Release (DR)} o bien 19 ediciones, cubre la región del cielo que se muestra en el diagrama \ref{fig:sky_araña} debido a su forma de observación y realiza observaciones tanto fotométricas como espectroscópicas.    
+El Sloan Digital Sky Survey (SDSS) es uno de los catálogos más relevantes y con mayor trayectoria en el área. Utiliza un telescopio de 2.5 metros de diámetro ubicado en el Observatorio de Apache Point en Sunspot, Nuevo México, a 2788 metros sobre el nivel del mar. El survey cuenta con 19 \textit{Data Releases} (DR) y cubre regiones específicas del cielo (Figura \ref{fig:sky_araña}).
+
+SDSS trabaja con cinco filtros: $u$, $g$, $r$, $i$, $z$. Es común caracterizar las galaxias según sus propiedades en el filtro $r$, ya que se asemeja más a la región visible del espectro electromagnético.
+
 
 \begin{figure}[ht]
     \centering
@@ -75,40 +77,37 @@ Hoy en día uno de los catálogos más relevantes y con mayor trayectoria en el 
 \end{figure}
 SDSS trabaja con 5 filtros llamados u,g,r,i,z; es normal caracterizar a las galaxias según sus características en el filtro r ya que es el que se asemeja mas a la región visible del especctro electromagnético
 
-En este trabajo se utiliza una muestra de 20000 galaxias que forman parte del catálogo DR17 de SDSS \citep{2022ApJS..259...35A}, de las cuales se realizo una limpieza preliminar y se uso los datos fotométricos y espectroscópicos de los mismos.
-Para este tipo de 
+En este trabajo se utiliza una muestra de 20000 galaxias del catálogo DR17 de SDSS \citep{2022ApJS..259...35A}, sometida a una limpieza preliminar y analizada mediante datos fotométricos y espectroscópicos.
 
-Por 
 
 \subsection{Muestras de galaxias}
-Tenemos como proposito trabajar con las propiedades generales de las galaxias por tanto queremos trabajar con un conjunto de muestra que sea grande, arbitrario y uniforme. Ahora esto último se complica al tener en cuenta que el universo esta en expansión y en como esto afecta a la radiación que nos llega de cada galaxia, teniendo esto en cuenta podemos definir dos tipos de muestras: \textbf{muestras completas por flujo} y \textbf{muestras compllets por volumen}
+El propósito de este trabajo es estudiar con las propiedades generales de las galaxias por tanto queremos trabajar con un conjunto de muestras que sea grande, arbitrario y uniforme de manera que sea representativo respecto a las galaxias que existen en el universo. Considerando la expansión del universo y su efecto en la radiación recibida, se definen dos tipos de muestras: 
 
-\begin{itemize}
-\item
-\item
+\begin{itemize} 
+	\item \textbf{Muestras completas por flujo}: Tienen una distribución uniforme en magnitud aparente, esto me asegura que no pierdo galaxias debido a problemas instrumentales.
+    \item \textbf{Muestras completas por volumen}: Tienen una distribución uniforme en magnitud absoluta, este me asegura que no pierdo galaxias al tomar redshifts mayores.
 \end{itemize}
 
-Mas adelante detallaremos en cual categoria entra nuestra muestra de datos.
+Más adelante se detallará en cual categoria entra nuestra muestra de datos.
 
 \section{Marco teórico}
-Esta sección pretende ser una versión resumida de los conceptos y características a usar en este trabajo, tratando de enfocarse en las definiciones utilizadas por SDSS para luego utilizar en los resultados y discusiones.
+Esta sección pretende ser una versión resumida de los conceptos y características utilizados en este trabajo, enfocandose en las definiciones utilizadas por SDSS para luego utilizar en los resultados y discusiones.
 
 \subsection{Morfología de una galaxia}
-La característica más básica de cualquier objeto es su forma, para una galaxia esto no es distinto, por tanto a lo largo del tiempo se han desarrollado distintos métodos para clasificar las galaxias según su forma y que diferencias existen entre una y otra.
-Hoy en dia la mas utilizada es  aquella desarrollada por Hubble a principios del siglo XX \citep{1926ApJ....64..321H}, en esta se clasifica a las galaxias en 4 tipos generales: \textbf{elípticas, espirales, lenticulares e irregulares}
-
+La característica más básica de cualquier objeto es su forma, para una galaxia esto no es distinto, por tanto a lo largo del tiempo se han desarrollado distintos métodos para clasificar las galaxias según su forma.
+Hoy en dia la mas utilizada es  aquella desarrollada por Hubble a principios del siglo XX \citep{1926ApJ....64..321H}, en esta se clasifica a las galaxias en 4 tipos generales: 
 
 \begin{itemize}
-    \item \textbf{Galaxias elípticas (E)} son galaxias que tienen isofotas\footnote{Las isofotas son contornos a lo largo de los cuales el brillo superficial de una fuente es constante. Si el perfil de luz de una galaxia es elíptico, entonces sus isofotas son elipses.} casi elípticas sin ninguna estructura claramente definida. Se subdividen según su elipticidad $e = 1 - b/a$, donde $a$ y $b$ denotan los semiejes mayor y menor, respectivamente. Las elípticas se encuentran en un rango relativamente amplio de elipticidad, $0 \lesssim e\lesssim 0.7$. La notación E$n$ se utiliza comúnmente para clasificar las elípticas con respecto a $e$, con $n = 10(1 - b/a)$; es decir, una galaxia E4 tiene una relación de ejes de $b/a = 0.6$, y las E0 tienen isofotas circulares. En términos de población estelar se sabe que las elípticas suelen tener la menor tasa de formación estelar y la población que posee suele ser una población vieja.
+    \item \textbf{Galaxias elípticas (E)} son galaxias que tienen isofotas\footnote{Las isofotas son contornos a lo largo de los cuales el brillo superficial de una fuente es constante. Si el perfil de luz de una galaxia es elíptico, entonces sus isofotas son elipses.} casi elípticas sin ninguna estructura claramente definida. Se subdividen según su elipticidad $e = 1 - b/a$, donde $a$ y $b$ son los semiejes mayor y menor, respectivamente. Las elípticas se encuentran en un rango relativamente amplio de elipticidad, $0 \lesssim e\lesssim 0.7$. La notación E$n$ se utiliza comúnmente para clasificar las elípticas con respecto a $e$, con $n = 10(1 - b/a)$; es decir, una galaxia E4 tiene una relación de ejes de $b/a = 0.6$, y las E0 tienen isofotas circulares. En general presentan suna tasa de formación estelar baja y la población que posee suele ser una población vieja.
 
-    \item \textbf{Galaxias espirales} consisten en un disco con estructura de brazos espirales y un bulbo central. Se dividen en dos subclases: espirales normales (S) y espirales barradas (SB). En cada una de estas subclases, se define una secuencia ordenada según la relación de brillo entre el bulbo y el disco, denotada por a, ab, b, bc, c, cd, d. Tienen una población estelar mas compleja, el disco suele ser tener una población más joven y concentra la formación estelar de la galaxia, mientras que el halo suele contener a las estrellas más viejas y enrojecidas.
+    \item \textbf{Galaxias espirales} consisten en un disco con estructura de brazos espirales y un bulbo central. Se dividen en dos subclases: espirales normales (S) y espirales barreadas (SB). En cada una de estas subclases, se define una secuencia ordenada según la relación de brillo entre el bulbo y el disco, denotada por a, ab, b, bc, c, cd, d. Tienen una población estelar mas compleja, el disco suele ser tener una población más joven y concentra la formación estelar de la galaxia, mientras que el halo suele contener a las estrellas más viejas y enrojecidas.
 
     \item \textbf{Galaxias irregulares (Irr)} son galaxias con solo estructura regular débil (Irr I) o sin estructura regular (Irr II). Son las que presentan mayor tasa de formación estelar, tanto así que a veces se las suelen confundir con regiones formadoras de estrellas de nuestra galaxia. También entran en esta categoría aquellas galaxias que se encuentran interactuando entre sí y que por lo tanto estan en proceso de cambiar su morfología.
 
     \item \textbf{Galaxias S0} son una transición entre elípticas y espirales que también se llaman \textit{lenticulares} por su forma de lente. Contienen un bulbo y una gran región envolvente de brillo relativamente no estructurado que a menudo aparece como un disco sin brazos espirales.
 \end{itemize}
 
-Cuando Hubble creo esta clasificación la penso como una clasificación evolutiva, donde las elípticas eran las galaxias más jovenes o \textit{tempranas} y las espirales las mas evolucionadas o \textit{tardías}, hoy en día se sabe que esto no es así pero los nombres \textit{tempranas} y \textit{tardías} se siguen usando con frecuencia; este trabajo no es la exccepción, también mencionaremos a estos tipos para diferenciar a las galaxias en ciertas ocasiones.
+Cuando Hubble creo esta clasificación la penso como una clasificación evolutiva, donde las elípticas eran las galaxias más jovenes o \textit{tempranas} y las espirales las mas evolucionadas o \textit{tardías}, hoy en día se sabe que esto no es así pero los nombres \textit{tempranas} y \textit{tardías} se siguen usando con frecuencia.
 
 
 \subsection{Tamaño de una galaxia}
@@ -118,24 +117,29 @@ En general son parámetros típicos $r_{50}$, el radio que contiene el $50\%$ de
 
 
 \subsubsection{Parámetro de concentración}
-Es un parámetro que marca que tan concentrada es un galaxia
-Se define como:
+Es un parámetro adimensional que describe qué tan concentrada está el flujo de una galaxia desde su centro. En el catálogo de SDSS se define como:
 \begin{equation}
 	C=r_{50}/r_{90}
 \end{equation}
 
 \subsection{Magnitudes}
-Las magnitudes son la característica más básica de cualquier objeto astronómico, nos dice cuanta luz emite y permite inferir mucha info. Pero para poder calcularla necesitamos poder definirla, para un objeto puntual, como una estrella, esta definición es sencilla, pero para un objeto extenso, como una galaxia, esta definición resulta mas complicada ya que para definirla correctamente hay que definir que región es parte de la galaxia y que región no.
-Es en estos casos que la definicion de la característica depende de como la defina el catálogo, en el caso de Sloan se definen distintos tipos de  magnitudes para cada filtro, pero en particular nos centramos en: \textbf{magnitud model} y \textbf{magnitud petro}, .
+Las magnitudes son la característica más básica de cualquier objeto astronómico, nos dice cuanta luz emite y permite inferir mucha info. Pero para poder calcularla necesitamos poder definirla, para un objeto puntual, como una estrella, esta definición es sencilla, pero para un objeto extenso, como una galaxia, esta definición resulta mas complicada ya que para definirla correctamente hay que definir que flujo realmente proviene de la galaxia.
 
-\subsubsection{Magnitud model}
-Una vez extraida la dsitribución de brillo de la galaxia se ajustan por separado dos módelos de dsitribución de brillo:
+\subsubsection{Magnitud módelo}
+Se ajustan dos módelos de distribución del flujo:
 \begin{itemize}
-	\item Perfil de De Vaucouleurs \citep{1948AnAp...11..247D}: \[I(r) = I_0 e^{-7.67 [(r/re)1/4]} \]
-	\item Perfil exponencial \citep{1970ApJ...160..811F}: \[I(r) = I_0 e^{-1.68r/re}\]
+	\item Perfil de De Vaucouleurs \citep{1948AnAp...11..247D}:  
+	\begin{equation}
+        I(r) = I_0 e^{-7.67 [(r/r_e)^{1/4}]}
+    \end{equation}
+   
+	\item Perfil exponencial \citep{1970ApJ...160..811F}:
+	\begin{equation}
+        I(r) = I_0 e^{-1.68r/r_e}
+    \end{equation}
 \end{itemize}
-Una vez ajustado cada uno se compara la bondad del ajuste en cada caso y se define a la magnitud model usando la Ley de Pogson: 
 
+Una vez ajustado cada uno se compara la bondad del ajuste en cada caso y se toma como valor del flujo al flujo intermedio, definiendo a la magnitud model con la Ley de Pogson: 
 
 \begin{equation}
 m_{model}= [22.5 \text{mag}] - 2.5 log_{10} (f)
@@ -145,9 +149,17 @@ Definirse a partir de un perfil teórico tiene sus ventajas y desventajas, por u
 Los flujos medidos en cada filtro son hechos con anchos equivalentes para que los indices de color queden bien definidos
 
 \subsubsection{Magnitud petrosiana}
-Se definen usando To satisfy these requirements, the SDSS has adopted a modified form of the Petrosian (1976) system, measuring galaxy fluxes within a circular aperture whose radius is defined by the shape of the azimuthally averaged light profile.
+El sistema Petrosiano \citep{1926ApJ....64..321H} mide flujos de una mide flujos dentro de una apertura circular cuyo radio define la forma del perfil de luz promediado azimutalmente. La razón Petrosiana $R_P$ a radio $r$ es:
+\begin{equation}
+    R_P(r) = \frac{I_{\text{anillo}}(r)}{I_{\text{promedio}}(r)}
+\end{equation}
 
-In the SDSS five-band photometry, the aperture in all bands is set by the profile of the galaxy in the r band alone. This procedure ensures that the color measured by comparing the Petrosian flux FP in different bands is measured through a consistent aperture.
+
+El radio Petrosiano $r_P$ es donde $R_P(r_P) = 0.2$. El flujo Petrosiano se define dentro de $2r_P$.
+\\
+
+Este sistema sin embargo no es el mas útil hoy en día para comparar entre filtros ya que al utilizar un radio específico en cada filtro para definir la apertura de la imagen se confunde el cambio de brillo ``natural'' con otros fenómenos físicos que resultan de interés.  
+Por tanto para la definición de los índices de color se utilizarón las magnitudes módelo.
 
 
 \subsubsection{Parámetro fracDeV}
@@ -158,9 +170,11 @@ Este parámetro sirve como un primer \textit{approach} para conocer la component
 
 
 \subsection{Brillo superficial}
-El brillo superficial es simplemente un parámetro que nos dice la cantidad de flujo de radiación por unidad de superficie que recibimos de un objeto. Para el caso de una galaxia resulta de interés ya que 
-\cite{2005PASA...22..118G}
-
+Define la cantidad de flujo por unidad de superficie recibido de un objeto. Para galaxias, proporciona información sobre la distribución espacial de la luz. 
+En especial se utilizó la definición dada por \cite{2005PASA...22..118G}
+\begin{equation}
+ \mu_{sup} = m_r + 2.5 \, \log_{10}\left(2\pi \, R50\_r^{2}\right) + \text{corr\_ab}_r
+\end{equation}
 
 \section{Datos}
 Se descargaron 20000 galaxias usando la pagina CasJobs, de este se descargaron las siguientes columnas de las tablas Galaxy y SpecObj con los limites ($0.02,0.05$)  para el redshift y ($14,18$) para la magnitud petrosiana r desafectada por la extinción interestelar de la Vía Láctea.
@@ -208,7 +222,7 @@ En el diagrama \ref{fig:completo_flujo} se grafica ... para ver la distribucion 
 Usando el $z$ de cada galaxia y eligiendo $H_0=70 Mpc^{-2}$, $\Omega_{mat}=0.3$, $\Omega_{\Lambda}=0.7$ como cosmología podemos calcular la distancia luminosa de la galaxia, la cual por definición nos permite usarla para calcular la magnitud absoluta de la galaxia teniendo en cuenta los efectos debidos a la expansión del universo.
 
 \begin{equation}
-d_L=(1 + z)\frac{c}{H_0} \int_0^z \frac{dz'}{\sqrt{\Omega_m(1+z')^3 + \Omega_\Lambda \quad \left[d_L\right]=Mpc
+d_L=(1 + z)\frac{c}{H_0} \int_0^z \frac{dz'}{\sqrt{\Omega_m(1+z')^3 + \Omega_\Lambda}} \; \left[d_L\right]=Mpc
 \end{equation}
 
 De la ecuación del módulo de la distancia y usando las correcciones AB para llevarlo al sistema módelo llego a la siguiente ecuación para la magnitud absoluta:
@@ -248,13 +262,131 @@ Para separar por color se ajusto dos distribuciones gaussianas al índice u-r, y
     \label{fig:red_blue}
 \end{figure}
 
+\subsection{Parametro de concentracion y parámetro fracDeV}
+La concentración $C$ muestra pico alrededor de 2.5 (Figura \ref{fig:hist_c}), usado para separar galaxias tempranas ($C > 2.5$) y tardías ($C \leq 2.5$).
+
+El parámetro fracDeV muestra sobredensidades en 0 (discos) y 1 (bulbos) Figura \ref{fig:hist_fracdev}.
+La sobredensidad cerca de 0  son de aquellas galaxias muy ``discoidales'' donde el disco es su componente principal y la sobredensidad cerca de 1 es debido a aquellas galaxias muy esferoidales (o donde el bulge aporta a la morfologia mucho mas que el disco), con esto en cuenta se separa en tipo bulbo si $fracDeV>0.8$  y en tipo disco si $fracDeV<0.2$.
 
 
-\subsection{Brillo superficial}
+La Figura \ref{fig:fracdev_vs_c} muestra correlación débil entre fracDeV y concentración, con bulbos tendiendo a mayor $C$ y tanto bulbo como disco teniendo una mayor rango del $C$ que aquellas que no entraron en alguna clasificación.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{hist_c.png}
+    \caption{Histograma del parámetro de concentración $r50/r90$}
+    \label{fig:hist_c}
+\end{figure}
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{hist_fracdev.png}
+    \caption{Histograma del parametro de $fracDeV$}
+    \label{fig:hist_fracdev}
+\end{figure}
+
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{fracdev_vs_c.png}
+    \caption{Diagrama comparación parámetro de concentración vs parametro de $fracDeV$}
+    \label{fig:fracdev_vs_c}
+\end{figure}
+
+Por ultimo tenemos el diagrama de comparacion de $u-r$ vs c donde  
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{gr_vs_c.png}
+    \caption{Diagrama comparación parámetro de concentración vs índice de color de $u-r$ }
+    \label{fig:ur_vs_c}
+\end{figure}
+
+
+
+
+\subsection{Relación tamaño y luminosidad}
+Las Figuras \ref{fig:mabs_vs_r50}--\ref{fig:mabs_vs_r50_earlyylate} muestran relaciones lineales en escala logarítmica.
+
+En la figura \ref{fig:mabs_vs_r50_rojoyazul} se nota como las galaxias azules se ubican por encima de las rojas siendo mas brillantes y teniendo mayor densidad de radio a un nivel un poco mayor que las rojas.
+En el diagrama bulge y disco sucede algo similar con las disco parecieran estar mejor repartidas pero al ser menos cantidad no lo puedo asegurar.
+Con las tempranas y tardias pareciera que no hay tanto una region de transicion como en el caso de las rojas y las azules.
+
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{mabs_vs_r50.png}
+    \caption{Diagrama tamaño vs luminosidad para toda la muestra de galaxias.}
+    \label{fig:mabs_vs_r50}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{mabs_vs_r50_azulyrojo.png}
+    \caption{Diagrama tamaño vs luminosidad para galaxias  rojas y azules.}
+    \label{fig:mabs_vs_r50_rojoyazul}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{mabs_vs_r50_bulgeydisco.png}
+    \caption{Diagrama tamaño vs luminosidad para galaxias según si predomina el \textit{bulge} en color o si preonmina el halo en color  .}
+    \label{fig:mabs_vs_r50_bulgeydisco}
+\end{figure}
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{mabs_vs_r50_earlyylate.png}
+    \caption{Diagrama tamaño vs luminosidad para galaxias tempranas en color o  tardías en color  }
+    \label{fig:mabs_vs_r50_earlyylate}
+\end{figure}
+
+
+\subsection{Diagrama color-magnitud}
+
+Las Figuras \ref{fig:dcm}--\ref{fig:dcm_earlyylate} muestran la nube azul y secuencia roja características. Galaxias con disco predominante se concentran en la nube azul, mientras bulgos predominan en secuencia roja.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{dcm_ur.png}
+    \caption{Diagrama color magnitud para galaxias rojas y azules.}
+    \label{fig:dcm}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{dcm_bd.png}
+    \caption{Diagrama color magnitud para galaxias según si predomina el \textit{bulge} en color o si predomina el halo en color.}
+    \label{fig:dcm_bulgeydisco}
+\end{figure}
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{dcm_el.png}
+    \caption{Diagrama color magnitud para galaxias tempranas en color o  tardías en color  }
+    \label{fig:dcm_earlyylate}
+\end{figure}
+
+
 
 \section{Conclusiones}
-\subsection{Clasificación}
 
+El análisis revela correlaciones significativas entre parámetros morfológicos y propiedades fotométricas:
+
+\begin{itemize}
+    \item La muestra presenta bimodalidad en índices de color, consistente con literatura
+    \item Existe correlación entre concentración y parámetro fracDeV
+    \item Las relaciones tamaño-luminosidad muestran dependencias con tipo morfológico
+    \item Los diagramas color-magnitud confirman la secuencia roja y nube azul
+    \item Los parámetros de SDSS permiten clasificación morfológica robusta
+\end{itemize}
+
+Estos resultados demuestran la utilidad de los catálogos modernos para estudios estadísticos de poblaciones galácticas.
 
 
 
