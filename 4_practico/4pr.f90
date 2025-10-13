@@ -42,12 +42,12 @@ dec_0=dec(k)
     ra_1= ra(j)
     dec_1=dec(j)
     tita = theta(ra_0,dec_0,ra_1,dec_1)
-    r_mpc(i) = tan(tita)*dist
-    end do 
-end do 
+    r_mpc(i) = tan(tita)*dist ! valeria nos dijo q no hace falta usar cosmos, verificar q si esta bien esta forma de pasar las distancias
+    end do  !do q calcula la distancias de una galaxia con el resto
+end do  !do q selecciona cada galaxia
 
 deallocate(ra,dec,r_mpc)
-end do
+end do !do que recorre cada cumulo
 
 close(35)
 close(25)
