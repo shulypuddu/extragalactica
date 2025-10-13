@@ -1,4 +1,5 @@
-#%%
+#%% 
+# --------- LIBRERIAS USADAS Y CUENTAS PRELIMINARES
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -111,9 +112,64 @@ lineal_tardias= ajuste_lineal(tardias['abs_model_mag_r'],tardias['petroR50_r'])
 lineal_bulge= ajuste_lineal(bulge['abs_model_mag_r'],bulge['petroR50_r'])
 lineal_disco= ajuste_lineal(disco['abs_model_mag_r'],disco['petroR50_r'])
 
+#%% 
+# ---------- Diagrama de Kormendy
+plt.figure(figsize=(10,6))
+plt.scatter(df['petroR50_r'],df['mu_sup'], s=1, color=bar_color, marker='.',alpha=0.75)
+plt.xlabel('Radio efectivo ($r_{50}}$)', fontsize=14)
+plt.ylabel('Brillo superficial ($\mu_{50}$)', fontsize=14)
+plt.title('Radio efectivo vs Brillo superficial',fontsize=17)
+plt.tight_layout()
+plt.ylim(17,24.5)
+plt.xlim(0,8)
+plt.gca().invert_yaxis()  
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/kormendy.png', dpi=300,bbox_inches='tight')
+plt.show()  
+
+plt.figure(figsize=(10,6))
+plt.scatter(rojo['petroR50_r'],rojo['mu_sup'], s=1, color='indianred', marker='.',alpha=0.75,label='Rojas')
+plt.scatter(azul['petroR50_r'],azul['mu_sup'], s=1, color='royalblue', marker='.',alpha=0.75,label='Azules')
+plt.xlabel('Radio efectivo ($r_{50}}$)', fontsize=14)
+plt.ylabel('Brillo superficial ($\mu_{50}$)', fontsize=14)
+plt.title('Radio efectivo vs Brillo superficial',fontsize=17)
+plt.tight_layout()
+plt.ylim(17,24.5)
+plt.xlim(0,8)
+plt.gca().invert_yaxis()  
+plt.legend()
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/rya_kormendy.png', dpi=300,bbox_inches='tight')
+plt.show()  
+
+plt.figure(figsize=(10,6))
+plt.scatter(tempranas['petroR50_r'],tempranas['mu_sup'], s=1, color='teal', marker='.',alpha=0.75,label='Tempranas ($ C \neq 2.5$)')
+plt.scatter(tardias['petroR50_r'],tardias['mu_sup'], s=1, color='hotpink', marker='.',alpha=0.75,label='Tardías ($C<2.5$)')
+plt.xlabel('Radio efectivo ($r_{50}}$)', fontsize=14)
+plt.ylabel('Brillo superficial ($\mu_{50}$)', fontsize=14)
+plt.title('Radio efectivo vs Brillo superficial',fontsize=17)
+plt.tight_layout()
+plt.legend()
+plt.ylim(17,24.5)
+plt.xlim(0,8)
+plt.gca().invert_yaxis()  
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/tyt_kormendy.png', dpi=300,bbox_inches='tight')
+plt.show()  
+
+plt.figure(figsize=(10,6))
+plt.scatter(bulge['petroR50_r'],bulge['mu_sup'], s=1, color='darkorange', marker='.',alpha=0.75,label='Bulbo ($ FracDeV \neq 0.8$)')
+plt.scatter(disco['petroR50_r'],disco['mu_sup'], s=1, color='royalblue', marker='.',alpha=0.75,label='Disco ($ FracDeV \leq 0.2$)')
+plt.xlabel('Radio efectivo ($r_{50}}$)', fontsize=14)
+plt.ylabel('Brillo superficial ($\mu_{50}$)', fontsize=14)
+plt.title('Radio efectivo vs Brillo superficial',fontsize=17)
+plt.tight_layout()
+plt.gca().invert_yaxis()  
+plt.legend()
+plt.xlim(0,8)
+plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/byd_kormendy.png', dpi=300,bbox_inches='tight')
+plt.show()  
 
 
-#%% ---------Diagrama de redshift vs magnitud absoluta
+#%% 
+# ---------Diagrama de redshift vs magnitud absoluta
 plt.figure(figsize=(10,6))
 plt.scatter(df['z'],df['abs_model_mag_r'], s=1, color=bar_color, marker='.',alpha=0.75)
 plt.xlabel('Redshift ($z$)', fontsize=14)
@@ -125,7 +181,8 @@ plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/mabs_vs_z.png', dpi=30
 
 plt.show()  
 
-#%% ----------histogramas de indices de color en un mismo figure
+#%%
+# ----------histogramas de indices de color en un mismo figure
 fig, axs = plt.subplots(2, 1, figsize=(14, 18)) # 2 filas, 1 columna
 
 # Primer gráfico: scatter de M_r vs z
@@ -213,7 +270,7 @@ plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/hist_fracdev.png', dpi
 
 
 plt.figure(figsize=(10,6))
-plt.scatter(df['c_par'],df['fracDeV_r'], marker='.',color=bar_color,alpha=0.5)
+#plt.scatter(df['c_par'],df['fracDeV_r'], marker='.',color=bar_color,alpha=0.5)
 plt.scatter(bulge['c_par'],bulge['fracDeV_r'], marker='.',color='darkorange',label='bulge',alpha=0.5)
 plt.scatter(disco['c_par'],disco['fracDeV_r'], marker='.',color='royalblue',label='disco',alpha=0.5)
 plt.xlabel('Parámetro de concentración (C)')
@@ -252,7 +309,7 @@ plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/gr_vs_c.png', dpi=300,
 
 #%% DIAGRAMAS COLOR MAGNITUD
 plt.figure(figsize=(10,6))
-plt.scatter(df['abs_petro_mag_r'], df['color_u_r'], marker='.',color=bar_color,alpha=0.5,label='Muestra')
+#plt.scatter(df['abs_petro_mag_r'], df['color_u_r'], marker='.',color=bar_color,alpha=0.5,label='Muestra')
 plt.scatter(rojo['abs_petro_mag_r'],rojo['color_u_r'],  marker='.',color='indianred',alpha=0.5,label='Rojas')
 plt.scatter(azul['abs_petro_mag_r'],azul['color_u_r'],marker='.',color='dodgerblue',alpha=0.5,label='Azules')
 plt.ylim(0,4)
@@ -266,7 +323,7 @@ plt.savefig('/mnt/sda2/extragalactica/2_practico/imagenes/dcm_ur.png', dpi=300,b
 plt.show()
 
 plt.figure(figsize=(10,6))
-plt.scatter(df['abs_petro_mag_r'],df['color_u_r'],  marker='.',color=bar_color,alpha=0.5,label='Muestra')
+#plt.scatter(df['abs_petro_mag_r'],df['color_u_r'],  marker='.',color=bar_color,alpha=0.5,label='Muestra')
 plt.scatter(tempranas['abs_petro_mag_r'],tempranas['color_u_r'],  marker='.',color='teal',alpha=0.5,label='Tempranas')
 plt.scatter(tardias['abs_petro_mag_r'], tardias['color_u_r'],marker='.',color='hotpink',alpha=0.5,label='Tardias')
 plt.ylim(0,4)
@@ -281,7 +338,7 @@ plt.show()
 
 
 plt.figure(figsize=(10,6))
-plt.scatter(df['abs_petro_mag_r'],df['color_u_r'],  marker='.',color=bar_color,alpha=0.5,label='Muestra')
+#plt.scatter(df['abs_petro_mag_r'],df['color_u_r'],  marker='.',color=bar_color,alpha=0.5,label='Muestra')
 plt.scatter(bulge['abs_petro_mag_r'],bulge['color_u_r'],  marker='.',color='darkorange',alpha=0.5,label='Bulge')
 plt.scatter(disco['abs_petro_mag_r'],disco['color_u_r'], marker='.',color='royalblue',alpha=0.5,label='Disco')
 plt.ylim(0,4)

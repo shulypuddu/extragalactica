@@ -37,8 +37,12 @@ plt.scatter(lum_10['z'],lum_10['vmax'], marker='.',color='b',alpha=0.5)
 
 #%%
 #--------------- Función de luminosidad 
-sns.histplot(luminosidad['petro_abs'],bins='auto')
+M_max=funcion['phi_hist'].max()
+phi_hist=funcion['phi_hist']/M_max
+
+
+sns.histplot(luminosidad['petro_abs'],bins='auto',stat='density')
 plt.show()
-sns.scatterplot(x=funcion['m_medio'],y=funcion['phi_hist'])
+sns.scatterplot(x=funcion['m_medio'],y=phi_hist)
 
 

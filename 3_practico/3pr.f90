@@ -56,7 +56,7 @@ write(50,*)'m_medio,phi_hist'
 
 do j = 1,b
     phi(j)=phi(j)*dm
-    m_medio = rmin+dm*real(2*j+1)*0.5   
+    m_medio = rmin+dm*real(2*j-1)*0.5   
     l_phi= log10(phi(j))
     !print*, rmin, m_medio, phi(j)
     write(50,*) m_medio ,',', l_phi
