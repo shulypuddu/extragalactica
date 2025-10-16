@@ -3,44 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: p2_J_Puddu.aux
 The style file: plainnat.bst
 Database file #1: bibliografia.bib
-You've used 7 entries,
+You've used 8 entries,
             2984 wiz_defined-function locations,
-            608 strings with 9728 characters,
-and the built_in function-call counts, 3072 in all, are:
-= -- 254
-> -- 103
-< -- 5
-+ -- 46
-- -- 31
-* -- 181
-:= -- 522
+            616 strings with 9781 characters,
+and the built_in function-call counts, 3516 in all, are:
+= -- 291
+> -- 113
+< -- 6
++ -- 50
+- -- 34
+* -- 206
+:= -- 594
 add.period$ -- 0
-call.type$ -- 7
-change.case$ -- 38
-chr.to.int$ -- 8
-cite$ -- 7
-duplicate$ -- 229
-empty$ -- 237
-format.name$ -- 45
-if$ -- 616
+call.type$ -- 8
+change.case$ -- 43
+chr.to.int$ -- 9
+cite$ -- 8
+duplicate$ -- 260
+empty$ -- 275
+format.name$ -- 49
+if$ -- 710
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 45
-newline$ -- 25
-num.names$ -- 28
-pop$ -- 82
+missing$ -- 51
+newline$ -- 28
+num.names$ -- 32
+pop$ -- 92
 preamble$ -- 1
-purify$ -- 38
+purify$ -- 43
 quote$ -- 0
-skip$ -- 127
+skip$ -- 148
 stack$ -- 0
-substring$ -- 134
-swap$ -- 98
+substring$ -- 165
+swap$ -- 111
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 63
+type$ -- 72
 warning$ -- 0
-while$ -- 27
+while$ -- 32
 width$ -- 0
-write$ -- 73
+write$ -- 83

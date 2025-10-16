@@ -62,37 +62,6 @@ Para inferir los procesos físicos que ocurren dentro de una galaxia es necesari
 Los catálogos o \textit{surveys} son los encargados de extraer la versión más primitiva de esta información, cada uno con su propio criterio. Este trabajo tiene como objetivo ejemplificar como obtener datos de estos catálogos y comprender estas características fundamentales e información relevante sobre las galaxias en general a partir de ellas.
 
 
-\subsection{Sloan Digital Sky Survey (SDSS)}
-
-El Sloan Digital Sky Survey (SDSS) es uno de los catálogos más relevantes y con mayor trayectoria en el área. Utiliza un telescopio de 2.5 metros de diámetro ubicado en el Observatorio de Apache Point en Sunspot, Nuevo México, a 2788 metros sobre el nivel del mar. El survey cuenta con 19 \textit{Data Releases} (DR) y cubre regiones específicas del cielo (Figura \ref{fig:sky_araña}).
-
-SDSS trabaja con cinco filtros: $u$, $g$, $r$, $i$, $z$. Es común caracterizar las galaxias según sus propiedades en el filtro $r$, ya que se asemeja más a la región visible del espectro electromagnético.
-
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=\linewidth]{orangespider-smaller.jpg}
-    \caption{Regiones del cielo cubiertas por el catálogo SDSS.}
-    \label{fig:sky_araña}
-\end{figure}
-SDSS trabaja con 5 filtros llamados u,g,r,i,z; es normal caracterizar a las galaxias según sus características en el filtro r ya que es el que se asemeja mas a la región visible del especctro electromagnético
-
-En este trabajo se utiliza una muestra de 20000 galaxias del catálogo DR17 de SDSS \citep{2022ApJS..259...35A}, sometida a una limpieza preliminar y analizada mediante datos fotométricos y espectroscópicos.
-
-
-\subsection{Muestras de galaxias}
-El propósito de este trabajo es estudiar con las propiedades generales de las galaxias por tanto queremos trabajar con un conjunto de muestras que sea grande, arbitrario y uniforme de manera que sea representativo respecto a las galaxias que existen en el universo. Considerando la expansión del universo y su efecto en la radiación recibida, se definen dos tipos de muestras: 
-
-\begin{itemize} 
-	\item \textbf{Muestras completas por flujo}: Tienen una distribución uniforme en magnitud aparente, esto me asegura que no pierdo galaxias debido a problemas instrumentales.
-    \item \textbf{Muestras completas por volumen}: Tienen una distribución uniforme en magnitud absoluta, este me asegura que no pierdo galaxias al tomar redshifts mayores.
-\end{itemize}
-
-Más adelante se detallará en cual categoria entra nuestra muestra de datos.
-
-\section{Marco teórico}
-Esta sección pretende ser una versión resumida de los conceptos y características utilizados en este trabajo, enfocandose en las definiciones utilizadas por SDSS para luego utilizar en los resultados y discusiones.
-
 \subsection{Morfología de una galaxia}
 La característica más básica de cualquier objeto es su forma, para una galaxia esto no es distinto, por tanto a lo largo del tiempo se han desarrollado distintos métodos para clasificar las galaxias según su forma.
 Hoy en dia la mas utilizada es  aquella desarrollada por Hubble a principios del siglo XX \citep{1926ApJ....64..321H}, en esta se clasifica a las galaxias en 4 tipos generales: 
@@ -109,18 +78,29 @@ Hoy en dia la mas utilizada es  aquella desarrollada por Hubble a principios del
 
 Cuando Hubble creo esta clasificación la penso como una clasificación evolutiva, donde las elípticas eran las galaxias más jovenes o \textit{tempranas} y las espirales las mas evolucionadas o \textit{tardías}, hoy en día se sabe que esto no es así pero los nombres \textit{tempranas} y \textit{tardías} se siguen usando con frecuencia.
 
+\subsection{Muestras de galaxias}
+El propósito de este trabajo es estudiar con las propiedades generales de las galaxias por tanto queremos trabajar con un conjunto de muestras que sea grande, arbitrario y uniforme de manera que sea representativo respecto a las galaxias que existen en el universo. Considerando la expansión del universo y su efecto en la radiación recibida, se definen dos tipos de muestras: 
 
-\subsection{Tamaño de una galaxia}
-Definir el tamaño de una galaxia es una tarea delicada, en parte por que hay que definir para una dada imagen hasta donde llega la galaxia y en parte por que una misma galaxia puede presentar distintos tamaños en distintos filtros, por tanto no es un parámetro que este univocamente definido sino que es necesario llegar a un término intermedio que pueda resultar útil para todas las galaxias. 
-SDSS logra esto definiendo su tamaño como el radio dentro del cual se concentra un cierto porcentaje del brillo total de la galaxia. \\
-En general son parámetros típicos $r_{50}$, el radio que contiene el $50\%$ del flujo total, y $r_{90}$ en el cual se concentra el $90\%$.
+\begin{itemize} 
+	\item \textbf{Muestras completas por flujo}: Tienen una distribución uniforme en magnitud aparente, esto me asegura que no pierdo galaxias debido a problemas instrumentales.
+    \item \textbf{Muestras completas por volumen}: Tienen una distribución uniforme en magnitud absoluta, este me asegura que no pierdo galaxias al tomar redshifts mayores.
+\end{itemize}
+
+Más adelante se detallará en cual categoria entra nuestra muestra de datos.
 
 
-\subsubsection{Parámetro de concentración}
-Es un parámetro adimensional que describe qué tan concentrada está el flujo de una galaxia desde su centro. En el catálogo de SDSS se define como:
-\begin{equation}
-	C=r_{50}/r_{90}
-\end{equation}
+\subsection{Sloan Digital Sky Survey (SDSS)}
+
+El Sloan Digital Sky Survey (SDSS) es uno de los catálogos más relevantes y con mayor trayectoria en el área. Utiliza un telescopio de 2.5 metros de diámetro ubicado en el Observatorio de Apache Point en Sunspot, Nuevo México, a 2788 metros sobre el nivel del mar. El survey cuenta con 19 \textit{Data Releases} (DR) y cubre regiones específicas del cielo (Figura \ref{fig:sky_araña}).
+
+SDSS trabaja con cinco filtros: $u$, $g$, $r$, $i$, $z$. Es común caracterizar las galaxias según sus propiedades en el filtro $r$, ya que se asemeja más a la región visible del espectro electromagnético.
+
+SDSS trabaja con 5 filtros llamados u,g,r,i,z; es normal caracterizar a las galaxias según sus características en el filtro r ya que es el que se asemeja mas a la región visible del especctro electromagnético
+
+En este trabajo se utiliza una muestra de 20000 galaxias del catálogo DR7 de SDSS \citep{SDSSDR7}, sometida a una limpieza preliminar y analizada mediante datos fotométricos y espectroscópicos.
+
+
+
 
 \subsection{Magnitudes}
 Las magnitudes son la característica más básica de cualquier objeto astronómico, nos dice cuanta luz emite y permite inferir mucha info. Pero para poder calcularla necesitamos poder definirla, para un objeto puntual, como una estrella, esta definición es sencilla, pero para un objeto extenso, como una galaxia, esta definición resulta mas complicada ya que para definirla correctamente hay que definir que flujo realmente proviene de la galaxia.
@@ -149,7 +129,7 @@ Definirse a partir de un perfil teórico tiene sus ventajas y desventajas, por u
 Los flujos medidos en cada filtro son hechos con anchos equivalentes para que los indices de color queden bien definidos
 
 \subsubsection{Magnitud petrosiana}
-El sistema Petrosiano \citep{1926ApJ....64..321H} mide flujos de una mide flujos dentro de una apertura circular cuyo radio define la forma del perfil de luz promediado azimutalmente. La razón Petrosiana $R_P$ a radio $r$ es:
+El sistema Petrosiano \citep{1976ApJ...209L...1P} mide flujos de una mide flujos dentro de una apertura circular cuyo radio define la forma del perfil de luz promediado azimutalmente. La razón Petrosiana $R_P$ a radio $r$ es:
 \begin{equation}
     R_P(r) = \frac{I_{\text{anillo}}(r)}{I_{\text{promedio}}(r)}
 \end{equation}
@@ -167,6 +147,17 @@ SDSS define un 3er tipo de magnitud que no se utilizó en este trabajo pero que 
 Por tanto $fraDeV$ es un parámetro en el cual se cuantiza que ``tanto'' se asemeja el pérfil de brillo respecto al pérfil de la ley de De Vaucoulers.\\
 Este parámetro sirve como un primer \textit{approach} para conocer la componente principal de una galaxia, en este trabajo en específico se tomó que si $fracDeV \leq 0.2$ entonces el disco es prominente mientras que si $fracDeV \geq 0.8$ el bulbo es mas prominente.
 
+
+\subsection{Tamaño de una galaxia}
+Definir el tamaño de una galaxia es una tarea delicada, en parte por que hay que definir para una dada imagen hasta donde llega la galaxia y en parte por que una misma galaxia puede presentar distintos tamaños en distintos filtros, por tanto no es un parámetro que este univocamente definido sino que es necesario llegar a un término intermedio que pueda resultar útil para todas las galaxias. 
+SDSS logra esto definiendo su tamaño como el radio dentro del cual se concentra un cierto porcentaje del brillo total de la galaxia. \\
+En general son parámetros típicos $r_{50}$, el radio que contiene el $50\%$ del flujo total, y $r_{90}$ en el cual se concentra el $90\%$.
+
+Parámetro de concentración :
+Es un parámetro adimensional que describe qué tan concentrada está el flujo de una galaxia desde su centro. En el catálogo de SDSS se define como:
+\begin{equation}
+	C=r_{50}/r_{90}
+\end{equation}
 
 
 \subsection{Brillo superficial}

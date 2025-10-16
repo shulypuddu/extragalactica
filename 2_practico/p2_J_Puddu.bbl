@@ -1,8 +1,8 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 
-\bibitem[{{Abdurro'uf} et~al.(2022)}]{2022ApJS..259...35A}
-{Abdurro'uf}, et~al., 2022, \apjs, 259, 35
+\bibitem[{{Abazajian} et~al.(2009)}]{SDSSDR7}
+{Abazajian} K.N., et~al., 2009, \apjs, 182, 543
 
 \bibitem[{{Baldry} et~al.(2004)}]{2004ApJ...600..681B}
 {Baldry} I.K., et~al., 2004, \apj, 600, 681
@@ -18,6 +18,9 @@
 
 \bibitem[{{Hubble}(1926)}]{1926ApJ....64..321H}
 {Hubble} E.P., 1926, \apj, 64, 321
+
+\bibitem[{{Petrosian}(1976)}]{1976ApJ...209L...1P}
+{Petrosian} V., 1976, \apjl, 210, L53
 
 \bibitem[{{S{\'e}rsic}(1963)}]{1963BAAA....6...41S}
 {S{\'e}rsic} J.L., 1963, Boletin de la Asociacion Argentina de Astronomia La
