@@ -1,7 +1,7 @@
 !::MODULOS:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 module lista 
 implicit none 
-integer, parameter :: f=6000 , g = 685035 , b = 20 !f para cosmos, g para datos, b cant de bines
+integer, parameter :: f=6000 , g = 685035 , b = 30!f para cosmos, g para datos, b cant de bines
 real, parameter :: pi=3.1415
 real, dimension(f):: redshift, d_luminosa
 real :: z, chi, dL
@@ -29,7 +29,8 @@ dm = (rmax-rmin)/real(b)
 phi=0.
 
 open(unit=30, file='datos.dat',status='old')
-write(35,*)'z,dL,petro_abs,rks_p,dLmax,zmax,vmax'
+open(unit=35, file='valores.dat',status='unknown')
+write(35,*)'z ','dL ','petro_abs ','rks_p ','dLmax ','zmax ','vmax '
 do i=1,g
     read(30,*)z,petro_r,red_r,r50,(rk_p(k),k=1,5),(rks_p(k),k=1,5)
     if (z>0.15 .or. z<=0.0) cycle
@@ -47,19 +48,20 @@ do i=1,g
     w=1./vmax
     m= int((petro_abs - rmin)/dm)+1
     phi(m)= phi(m)+1.*w
-write(35,*)z,',',dL,',',petro_abs,',',rks_p(3),',',dLmax,',',zmax,',',vmax
+write(35,*)z,dL,petro_abs,rks_p(3),dLmax,zmax,vmax
 end do 
+close(35)
 close(30)
 
-open(unit=50, file='fun_lum.csv',status='unknown')
-write(50,*)'m_medio,phi_hist'
+open(unit=50, file='fun_lum.dat',status='unknown')
+write(50,*)'m_medio ','phi ','phi_hist '
 
 do j = 1,b
     phi(j)=phi(j)*dm
     m_medio = rmin+dm*real(2*j-1)*0.5   
     l_phi= log10(phi(j))
     !print*, rmin, m_medio, phi(j)
-    write(50,*) m_medio ,',', l_phi
+    write(50,*) m_medio ,phi(j),l_phi
 end do
 close(50)
 

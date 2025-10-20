@@ -1,0 +1,105 @@
+\documentclass[twocolumn]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{microtype}
+\usepackage{etoolbox}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+\usepackage{abstract}
+\usepackage{geometry}
+\usepackage{booktabs}
+%Ubicacion de los graficos 
+\graphicspath{ {imagenes/} }
+
+% DEFINIR LOS COMANDOS QUE FALTAN
+\providecommand{\apjs}{ApJ Suppl. Ser.}
+\providecommand{\aj}{Astron. J.}
+\providecommand{\apj}{Astrophys. J.}
+\providecommand{\apjl}{Astrophys. J. Lett.}
+\providecommand{\aap}{Astron. Astrophys.}
+\providecommand{\mnras}{Mon. Not. R. Astron. Soc.}
+\providecommand{\pasa}{Publications of the Astronomical Society of Australia}
+% Configuración de página
+\geometry{a4paper, margin=1in}
+
+% Configuración de encabezados
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Función de Luminosidad}
+\fancyhead[R]{\small \thepage}
+\fancyfoot[C]{\footnotesize Astronomía Extragaláctica - 2025 - J.M. Puddu }
+
+% Configuración del abstract para una columna
+\renewcommand{\abstractname}{Abstract}
+\setlength{\absleftindent}{0pt}
+\setlength{\absrightindent}{0pt}
+
+\title{Función de luminosidad}
+\author{J.M. Puddu \\ FAMAF - Universidad Nacional de Córdoba - Argentina}
+
+\begin{document}
+
+\twocolumn[
+\begin{@twocolumnfalse}
+    \maketitle
+    \begin{abstract}
+        \noindent funcion de luminosidad de galaxias
+        \vspace{0.5em}
+        \noindent\textbf{Palabras clave}: Galaxias, Luminosidad, Astronomía extragaláctica
+    \end{abstract}
+    \vspace{2em} % Espacio después del abstract
+\end{@twocolumnfalse}
+]
+
+\section{Introducción}
+La función luminosidad de las galaxias es una herramienta importante para el estudio de la estructura a gran esccala ya que permite la estimación de la totalidad de la materia luminosa que se encuentra en las galaxias. Por esto este trabajo tiene como objetivo principal definir la función luminosidad y ejemplificarla en una muestra de galaxias tomadas del Sloan Digital Sky Survey.
+
+
+\subsection{Función de luminosidad}
+\citet{Binggeli1988} define como función de luminosidad como una función de distribución de probabilidad para la magnitud absoluta $M$ en algún filtro, al tomarla sin especificar el tipo morfológico de la galaxia estamos hablando de \textit{Función Universal} o \textit{Función luminosidad generalizada}.
+
+
+
+\subsubsection{Función de Schechter}
+
+\subsubsection{Métodos de determinación de la función luminosidad}
+
+\subsection{Corrección de Malmquist}
+
+
+\subsection{Corrección K}
+
+
+
+\section{Datos}
+
+\subsection{Función luminosidad}
+\begin{figure}[ht]
+\includegraphics[width=\linewidth]{hist_mag_abs.pdf}
+\caption{Histograma de la magnitud absoluta en el filtro $r$ de la muestra de galaxias.}
+\label{fig:hist_m}
+\end{figure}
+
+\begin{figure}[ht]
+\includegraphics[width=\linewidth]{funcion_lum.pdf}
+\caption{Función luminosidad en el filtro $r$ de la muestra de galaxias.}
+\label{fig:phi_m}
+\end{figure}
+
+
+
+
+\subsection{Función Schechter}
+
+
+\section{Conclusiones}
+
+
+\bibliographystyle{plainnat}
+\bibliography{bibliografia}
+
+\end{document}

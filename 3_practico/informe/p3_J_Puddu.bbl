@@ -1,7 +1,8 @@
 \begin{thebibliography}{1}
 \providecommand{\natexlab}[1]{#1}
 
-\bibitem[{{Hubble}(1926)}]{1926ApJ....64..321H}
-{Hubble} E.P., 1926, \apj, 64, 321
+\bibitem[{{Schneider}(2015)}]{Schneider2015}
+{Schneider} P., 2015, \textit{{Extragalactic Astronomy and Cosmology: An
+  Introduction}}, second ed., Springer, Heidelberg
 
 \end{thebibliography}
