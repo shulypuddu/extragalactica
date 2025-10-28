@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.10.14)  14 OCT 2025 20:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.10.14)  28 OCT 2025 11:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -360,7 +360,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+)
+
+Package natbib Warning: Citation `1926ApJ....64..321H' on page 1 undefined on i
+nput line 67.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
@@ -369,157 +374,6 @@ LaTeX Warning: Reference `fig:sky_araña' on page 2 undefined on input line 94.
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--140
-
- []
-
-[2]
-<imagenes/gal_in_sky.png, id=28, 616.704pt x 388.5717pt>
-File: imagenes/gal_in_sky.png Graphic file (type png)
-<use imagenes/gal_in_sky.png>
-Package pdftex.def Info: imagenes/gal_in_sky.png  used on input line 186.
-(pdftex.def)             Requested size: 221.48395pt x 139.55367pt.
-<imagenes/gal_z.png, id=30, 621.522pt x 388.5717pt>
-File: imagenes/gal_z.png Graphic file (type png)
-<use imagenes/gal_z.png>
-Package pdftex.def Info: imagenes/gal_z.png  used on input line 195.
-(pdftex.def)             Requested size: 221.48395pt x 138.46864pt.
-<imagenes/mag_vs_z.png, id=31, 618.1494pt x 388.0899pt>
-File: imagenes/mag_vs_z.png Graphic file (type png)
-<use imagenes/mag_vs_z.png>
-Package pdftex.def Info: imagenes/mag_vs_z.png  used on input line 204.
-(pdftex.def)             Requested size: 221.48395pt x 139.04901pt.
- [3 <./imagenes/gal_in_sky.png> <./imagenes/gal_z.png>]
-Overfull \hbox (6.5173pt too wide) detected at line 217
-[]\OML/cmm/m/it/10 d[] \OT1/cmr/m/n/10 = (1 + \OML/cmm/m/it/10 z\OT1/cmr/m/n/10
- )[] [][] []  [] = \OML/cmm/m/it/10 Mpc
- []
-
-<imagenes/mabs_vs_z.png, id=38, 711.8595pt x 423.0204pt>
-File: imagenes/mabs_vs_z.png Graphic file (type png)
-<use imagenes/mabs_vs_z.png>
-Package pdftex.def Info: imagenes/mabs_vs_z.png  used on input line 228.
-(pdftex.def)             Requested size: 221.48395pt x 131.61261pt.
-<imagenes/colores.png, id=39, 1003.1076pt x 1293.8739pt>
-File: imagenes/colores.png Graphic file (type png)
-<use imagenes/colores.png>
-Package pdftex.def Info: imagenes/colores.png  used on input line 244.
-(pdftex.def)             Requested size: 221.48395pt x 285.67976pt.
-<imagenes/rojas_y_azules.png, id=40, 853.5087pt x 1051.5285pt>
-File: imagenes/rojas_y_azules.png Graphic file (type png)
-<use imagenes/rojas_y_azules.png>
-Package pdftex.def Info: imagenes/rojas_y_azules.png  used on input line 251.
-(pdftex.def)             Requested size: 221.48395pt x 272.86148pt.
-<imagenes/hist_c.png, id=41, 605.3817pt x 374.5995pt>
-File: imagenes/hist_c.png Graphic file (type png)
-<use imagenes/hist_c.png>
-Package pdftex.def Info: imagenes/hist_c.png  used on input line 267.
-(pdftex.def)             Requested size: 221.48395pt x 137.05063pt.
-<imagenes/hist_fracdev.png, id=42, 595.7457pt x 374.5995pt>
-File: imagenes/hist_fracdev.png Graphic file (type png)
-<use imagenes/hist_fracdev.png>
-Package pdftex.def Info: imagenes/hist_fracdev.png  used on input line 275.
-(pdftex.def)             Requested size: 221.48395pt x 139.2684pt.
-<imagenes/fracdev_vs_c.png, id=43, 619.5948pt x 372.9132pt>
-File: imagenes/fracdev_vs_c.png Graphic file (type png)
-<use imagenes/fracdev_vs_c.png>
-Package pdftex.def Info: imagenes/fracdev_vs_c.png  used on input line 284.
-(pdftex.def)             Requested size: 221.48395pt x 133.30406pt.
-<imagenes/gr_vs_c.png, id=44, 619.5948pt x 372.9132pt>
-File: imagenes/gr_vs_c.png Graphic file (type png)
-<use imagenes/gr_vs_c.png>
-Package pdftex.def Info: imagenes/gr_vs_c.png  used on input line 293.
-(pdftex.def)             Requested size: 221.48395pt x 133.30406pt.
-[4 <./imagenes/mag_vs_z.png> <./imagenes/mabs_vs_z.png>]
-<imagenes/mabs_vs_r50.png, id=50, 613.8132pt x 389.5353pt>
-File: imagenes/mabs_vs_r50.png Graphic file (type png)
-<use imagenes/mabs_vs_r50.png>
-Package pdftex.def Info: imagenes/mabs_vs_r50.png  used on input line 312.
-(pdftex.def)             Requested size: 221.48395pt x 140.5595pt.
-<imagenes/mabs_vs_r50_azulyrojo.png, id=51, 613.8132pt x 389.5353pt>
-File: imagenes/mabs_vs_r50_azulyrojo.png Graphic file (type png)
-<use imagenes/mabs_vs_r50_azulyrojo.png>
-Package pdftex.def Info: imagenes/mabs_vs_r50_azulyrojo.png  used on input line
- 319.
-(pdftex.def)             Requested size: 221.48395pt x 140.5595pt.
-<imagenes/mabs_vs_r50_bulgeydisco.png, id=52, 613.8132pt x 389.5353pt>
-File: imagenes/mabs_vs_r50_bulgeydisco.png Graphic file (type png)
-<use imagenes/mabs_vs_r50_bulgeydisco.png>
-Package pdftex.def Info: imagenes/mabs_vs_r50_bulgeydisco.png  used on input li
-ne 326.
-(pdftex.def)             Requested size: 221.48395pt x 140.5595pt.
-<imagenes/mabs_vs_r50_earlyylate.png, id=53, 613.8132pt x 389.5353pt>
-File: imagenes/mabs_vs_r50_earlyylate.png Graphic file (type png)
-<use imagenes/mabs_vs_r50_earlyylate.png>
-Package pdftex.def Info: imagenes/mabs_vs_r50_earlyylate.png  used on input lin
-e 334.
-(pdftex.def)             Requested size: 221.48395pt x 140.5595pt.
-<imagenes/dcm_ur.png, id=54, 612.3678pt x 388.0899pt>
-File: imagenes/dcm_ur.png Graphic file (type png)
-<use imagenes/dcm_ur.png>
-Package pdftex.def Info: imagenes/dcm_ur.png  used on input line 346.
-(pdftex.def)             Requested size: 221.48395pt x 140.36365pt.
-<imagenes/dcm_bd.png, id=55, 612.3678pt x 388.0899pt>
-File: imagenes/dcm_bd.png Graphic file (type png)
-<use imagenes/dcm_bd.png>
-Package pdftex.def Info: imagenes/dcm_bd.png  used on input line 353.
-(pdftex.def)             Requested size: 221.48395pt x 140.36365pt.
-<imagenes/dcm_el.png, id=56, 612.3678pt x 388.0899pt>
-File: imagenes/dcm_el.png Graphic file (type png)
-<use imagenes/dcm_el.png>
-Package pdftex.def Info: imagenes/dcm_el.png  used on input line 361.
-(pdftex.def)             Requested size: 221.48395pt x 140.36365pt.
-
-Underfull \hbox (badness 4467) in paragraph at lines 374--375
-[]\OT1/cmr/m/n/10 (+20) Existe cor-relaci^^Son en-tre con-cen-traci^^Son y
- []
-
-(./p2_J_Puddu.bbl) [5 <./imagenes/colores.png> <./imagenes/rojas_y_azules.png>]
-[6 <./imagenes/hist_c.png> <./imagenes/hist_fracdev.png> <./imagenes/fracdev_vs
-_c.png> <./imagenes/gr_vs_c.png> <./imagenes/mabs_vs_r50.png> <./imagenes/mabs_
-vs_r50_azulyrojo.png> <./imagenes/mabs_vs_r50_bulgeydisco.png>] [7 <./imagenes/
-mabs_vs_r50_earlyylate.png> <./imagenes/dcm_ur.png> <./imagenes/dcm_bd.png> <./
-imagenes/dcm_el.png>] (./p2_J_Puddu.aux)
- ***********
-LaTeX2e <2023-11-01> patch level 1
-L3 programming layer <2024-01-22>
- ***********
-
-
-LaTeX Warning: There were undefined references.
-
- ) 
-Here is how much of TeX's memory you used:
- 6873 strings out of 476006
- 109436 string characters out of 5791059
- 1941975 words of memory out of 5000000
- 28668 multiletter control sequences out of 15000+600000
- 571511 words of font info for 149 fonts, out of 8000000 for 9000
- 107 hyphenation exceptions out of 8191
- 79i,13n,93p,1007b,302s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/shuly/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600
-pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/symbols/msam10.pfb>
-Output written on p2_J_Puddu.pdf (7 pages, 9108325 bytes).
-PDF statistics:
- 163 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 30806 words of extra memory for PDF output out of 35830 (max. 10000000)
-
+!pdfTeX error: /usr/bin/pdflatex (file ./imagenes/dr7photo_big.png): libpng: in
+ternal error
+ ==> Fatal error occurred, no output PDF file produced!

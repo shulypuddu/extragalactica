@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.10.14)  19 OCT 2025 16:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.10.14)  23 OCT 2025 12:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -279,35 +279,35 @@ LaTeX Info: Redefining \% on input line 12.
 )
 \openout1 = `p3_J_Puddu.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Info: Redefining \. on input line 44.
-LaTeX Info: Redefining \% on input line 44.
-LaTeX Info: Redefining \microtypecontext on input line 44.
-Package microtype Info: Applying patch `item' on input line 44.
-Package microtype Info: Applying patch `toc' on input line 44.
-Package microtype Info: Applying patch `eqnum' on input line 44.
-Package microtype Info: Applying patch `footnote' on input line 44.
-Package microtype Info: Applying patch `verbatim' on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Info: Redefining \. on input line 45.
+LaTeX Info: Redefining \% on input line 45.
+LaTeX Info: Redefining \microtypecontext on input line 45.
+Package microtype Info: Applying patch `item' on input line 45.
+Package microtype Info: Applying patch `toc' on input line 45.
+Package microtype Info: Applying patch `eqnum' on input line 45.
+Package microtype Info: Applying patch `footnote' on input line 45.
+Package microtype Info: Applying patch `verbatim' on input line 45.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 44.
+LaTeX Info: Redefining \showhyphens on input line 45.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -372,7 +372,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 56.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 58.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -380,7 +380,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 58.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -389,53 +389,136 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-<imagenes/hist_mag_abs.pdf, id=1, 387.55415pt x 278.34865pt>
+Underfull \hbox (badness 2181) in paragraph at lines 65--65
+[]\OT1/cmr/bx/n/12 (+20) Distribuciones es-pec-tra-les de
+ []
+
+
+Overfull \hbox (13.57603pt too wide) detected at line 98
+[]\OML/cmm/m/it/10 K\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^U[]; z\OT1/cmr/m/n/10 )
+ = 2[]5 [][](1 + \OML/cmm/m/it/10 z\OT1/cmr/m/n/10 ) + 2[]5 [][] []
+ []
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+Overfull \hbox (39.54543pt too wide) detected at line 148
+[]\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 )\OML/
+cmm/m/it/10 dM \OT1/cmr/m/n/10 = [] [](10)\OML/cmm/m/it/10 ^^^[]\OT1/cmr/m/n/10
+ 10[]\OML/cmm/m/it/10 e[]dM
+ []
+
+[2]
+<imagenes/hist_z.pdf, id=30, 378.0499pt x 278.34865pt>
+File: imagenes/hist_z.pdf Graphic file (type pdf)
+<use imagenes/hist_z.pdf>
+Package pdftex.def Info: imagenes/hist_z.pdf  used on input line 161.
+(pdftex.def)             Requested size: 199.3342pt x 146.76381pt.
+<imagenes/corrk_combined.png, id=31, 1582.4721pt x 552.8655pt>
+File: imagenes/corrk_combined.png Graphic file (type png)
+<use imagenes/corrk_combined.png>
+Package pdftex.def Info: imagenes/corrk_combined.png  used on input line 174.
+(pdftex.def)             Requested size: 407.66833pt x 142.42561pt.
+<imagenes/hist_mag_abs.pdf, id=33, 409.95784pt x 327.20317pt>
 File: imagenes/hist_mag_abs.pdf Graphic file (type pdf)
 <use imagenes/hist_mag_abs.pdf>
-Package pdftex.def Info: imagenes/hist_mag_abs.pdf  used on input line 78.
-(pdftex.def)             Requested size: 221.48395pt x 159.07236pt.
-<imagenes/funcion_lum.pdf, id=2, 398.29189pt x 278.34865pt>
+Package pdftex.def Info: imagenes/hist_mag_abs.pdf  used on input line 192.
+(pdftex.def)             Requested size: 199.3342pt x 159.09276pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<imagenes/volm.pdf, id=34, 413.17957pt x 289.45264pt>
+File: imagenes/volm.pdf Graphic file (type pdf)
+<use imagenes/volm.pdf>
+Package pdftex.def Info: imagenes/volm.pdf  used on input line 212.
+(pdftex.def)             Requested size: 199.3342pt x 139.64235pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:phi_m' on page 3 undefined on input line 217.
+
+
+Overfull \hbox (17.13904pt too wide) detected at line 226
+[][][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 ) = [][](\OML/cmm/m/
+it/10 A\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 0[]4(\OML/cmm/m/i
+t/10 M \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 B\OT1/cmr/m/n/10 )\OML/cmm/m/it/10
+ C \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 10[]
+ []
+
+
+Underfull \hbox (badness 2671) in paragraph at lines 229--230
+[]\OT1/cmr/m/n/10 (+20) El ajus-te arroj^^So los si-guien-tes va-lo-res pa-
+ []
+
+
+Underfull \hbox (badness 3884) in paragraph at lines 229--230
+\OT1/cmr/m/n/10 (+20) ra los par^^Same-tros lo-gar^^S^^Ptmi-cos $(\OML/cmm/m/it
+/10 A; B; C\OT1/cmr/m/n/10 (+20) ) =
+ []
+
+[3 <./imagenes/hist_z.pdf>]
+<imagenes/funcion_lum.pdf, id=77, 416.34106pt x 327.20317pt>
 File: imagenes/funcion_lum.pdf Graphic file (type pdf)
 <use imagenes/funcion_lum.pdf>
-Package pdftex.def Info: imagenes/funcion_lum.pdf  used on input line 84.
-(pdftex.def)             Requested size: 221.48395pt x 154.78688pt.
-
-(./p3_J_Puddu.bbl
-Underfull \vbox (badness 2181) has occurred while \output is active []
-
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+Package pdftex.def Info: imagenes/funcion_lum.pdf  used on input line 237.
+(pdftex.def)             Requested size: 221.48395pt x 174.0659pt.
 
 
- <./imagenes/hist_mag_abs.pdf> <./imagenes/funcion_lum.pdf>] (./p3_J_Puddu.aux
-LaTeX Info: Redefining \. on input line 12.
-LaTeX Info: Redefining \% on input line 12.
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(./p3_J_Puddu.bbl) [4 <./imagenes/corrk_combined.png> <./imagenes/hist_mag_abs.
+pdf> <./imagenes/volm.pdf>] [5
+
+ <./imagenes/funcion_lum.pdf>] (./p3_J_Puddu.aux
+LaTeX Info: Redefining \. on input line 10.
+LaTeX Info: Redefining \% on input line 10.
 )
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 7999 strings out of 476006
- 127702 string characters out of 5791059
- 1929975 words of memory out of 5000000
- 29877 multiletter control sequences out of 15000+600000
- 568545 words of font info for 99 fonts, out of 8000000 for 9000
+ 8185 strings out of 476006
+ 130261 string characters out of 5791059
+ 1945975 words of memory out of 5000000
+ 29966 multiletter control sequences out of 15000+600000
+ 572904 words of font info for 152 fonts, out of 8000000 for 9000
  107 hyphenation exceptions out of 8191
- 79i,9n,93p,1007b,365s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,12n,93p,1007b,365s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmti10.pfb>
-Output written on p3_J_Puddu.pdf (1 page, 142659 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmti10.pfb>
+Output written on p3_J_Puddu.pdf (5 pages, 1651143 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
+ 313 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 28683 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 32794 words of extra memory for PDF output out of 35830 (max. 10000000)
 

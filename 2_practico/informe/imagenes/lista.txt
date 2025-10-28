@@ -1,0 +1,19 @@
+colores_ajustados.png !
+colores.png !
+dcm_gr.png
+dcm_ur.png !
+fracdev_vs_c.png
+gal_in_sky.png !
+gal_z.png !
+gr_vs_c.png
+hist_c.png ! 
+hist_fracdev.png !
+mabs_vs_r50_azulyrojo.png !
+mabs_vs_r50_bulgeydisco.png !
+mabs_vs_r50_earlyylate.png !
+mabs_vs_r50.png !
+mabs_vs_z.png !
+mag_vs_z.png !
+orangespider-smaller.jpg !
+rojas_y_azules.png !
+ur_vs_c.png !

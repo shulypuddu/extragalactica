@@ -1,0 +1,21 @@
+# CANTIDAD TOTAL DE GALAXIAS 508330
+#   Column       Non-Null Count   Dtype  
+---  ------       --------------   -----  
+ 0   ra           508330 non-null  float64 # ascencion recta
+ 1   dec          508330 non-null  float64 # declinacion
+ 2   z            508330 non-null  float64 # redshift
+ 3   Mr01         508330 non-null  float64 # magnitud absoluta a z=0.1
+ 4   ur           508330 non-null  float64 # color u-r
+ 5   mur          508330 non-null  float64 # brillo superficial
+ 6   kr50         508330 non-null  float64 # distancia r50 en kiloparsecs
+ 7   C            508330 non-null  float64 # concentracion
+ 8   stellarmass  508330 non-null  float64 # masa estelar
+ 9   sfr          508330 non-null  float64 # star formation rate
+ 10  ssfr         508330 non-null  float64 # specific sfr
+ 11  Dn4000       508330 non-null  float64 # break de los 4000
+ 12  OH           508330 non-null  float64 # abundancia del oxigeno ya con el log
+ 13  w            508330 non-null  float64 # peso 1/V_max
+ 14  Pe           508330 non-null  float64 # probabilidad de ser eliptica segun el galaxyzoo
+ 15  Ps           508330 non-null  float64 # probabilidad de ser espiral segun el galaxyzoo
+
+

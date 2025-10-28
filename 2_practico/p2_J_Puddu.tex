@@ -47,7 +47,7 @@
 \begin{@twocolumnfalse}
     \maketitle
     \begin{abstract}
-        \noindent Este trabajo presenta un análisis estadístico de la morfología y propiedades de galaxias utilizando datos del Sloan Digital Sky Survey (SDSS). Se estudian características fotométrics y espectroscópicas de una muestra de 20,000 galaxias con el objetivo de extraer información relevante para estudios extragalácticos. Se analizan parámetros morfológicos, distribución de colores, relaciones tamaño-luminosidad y diagramas color-magnitud, identificando correlaciones entre las propiedades estructurales y poblaciones estelares.
+        \noindent Este trabajo presenta un análisis estadístico de la morfología y propiedades de galaxias utilizando datos del Sloan Digital Sky Survey (SDSS). Se estudian características fotométrics y espectroscópicas de una muestra de 20,000 galaxias con el objetivo de extraer información relevante y analizar las características de una muestra de galaxias en general y en específico de una muestra de SDSS. Se analizan parámetros morfológicos, distribución de colores, relaciones tamaño-luminosidad y diagramas color-magnitud, identificando correlaciones entre las propiedades estructurales y poblaciones estelares.
         \vspace{0.5em}
         \noindent\textbf{Palabras clave}: Galaxias, Morfología, SDSS, Astronomía extragaláctica
     \end{abstract}
@@ -63,7 +63,7 @@ Los catálogos o \textit{surveys} son los encargados de extraer la versión más
 
 
 \subsection{Morfología de una galaxia}
-La característica más básica de cualquier objeto es su forma, para una galaxia esto no es distinto, por tanto a lo largo del tiempo se han desarrollado distintos métodos para clasificar las galaxias según su forma.
+La característica más básica de cualquier objeto es su forma aparente, para una galaxia esto no es distinto, por tanto a lo largo del tiempo se han desarrollado distintos métodos para clasificar las galaxias según su forma.
 Hoy en dia la mas utilizada es  aquella desarrollada por Hubble a principios del siglo XX \citep{1926ApJ....64..321H}, en esta se clasifica a las galaxias en 4 tipos generales: 
 
 \begin{itemize}
@@ -93,9 +93,16 @@ Más adelante se detallará en cual categoria entra nuestra muestra de datos.
 
 El Sloan Digital Sky Survey (SDSS) es uno de los catálogos más relevantes y con mayor trayectoria en el área. Utiliza un telescopio de 2.5 metros de diámetro ubicado en el Observatorio de Apache Point en Sunspot, Nuevo México, a 2788 metros sobre el nivel del mar. El survey cuenta con 19 \textit{Data Releases} (DR) y cubre regiones específicas del cielo (Figura \ref{fig:sky_araña}).
 
-SDSS trabaja con cinco filtros: $u$, $g$, $r$, $i$, $z$. Es común caracterizar las galaxias según sus propiedades en el filtro $r$, ya que se asemeja más a la región visible del espectro electromagnético.
 
-SDSS trabaja con 5 filtros llamados u,g,r,i,z; es normal caracterizar a las galaxias según sus características en el filtro r ya que es el que se asemeja mas a la región visible del especctro electromagnético
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{dr7photo_big.png}
+    \caption{Ubicación en el cielo de las galaxias seleccionadas.}
+    \label{fig:sky_araña}
+\end{figure}
+
+
+SDSS trabaja con cinco filtros: $u$, $g$, $r$, $i$, $z$. Es común caracterizar las galaxias según sus propiedades en el filtro $r$, ya que se asemeja más a la región visible del espectro electromagnético.
 
 En este trabajo se utiliza una muestra de 20000 galaxias del catálogo DR7 de SDSS \citep{SDSSDR7}, sometida a una limpieza preliminar y analizada mediante datos fotométricos y espectroscópicos.
 
@@ -193,7 +200,7 @@ También se realizo el diagrama \ref{fig:hist_z} para comprobar la distribución
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{gal_z.png}
-    \caption{Ubicación en el cielo de las galaxias seleccionadas.}
+    \caption{Distribución del redshift de la muestra tomada.}
     \label{fig:hist_z}
 \end{figure}
 
@@ -202,7 +209,7 @@ En el diagrama \ref{fig:completo_flujo} se grafica ... para ver la distribucion 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{mag_vs_z.png}
-    \caption{Ubicación en el cielo de las galaxias seleccionadas.}
+    \caption{Magnitud aparente en el filtro $r$ desafectada por extinción VS. redshift de la muestra.}
     \label{fig:completo_flujo}
 \end{figure}
 
@@ -226,7 +233,7 @@ Donde \[i=\left(u,g,r,i,z \right) \] los filtros disponibles en Sloan. Al hacer 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{mabs_vs_z.png}
-    \caption{Ubicación en el cielo de las galaxias seleccionadas.}
+    \caption{Magnitud absolutd en el filtro $r$ VS. redshift de la muestra.}
     \label{fig:M_r_hist}
 \end{figure}
 
@@ -237,21 +244,33 @@ Con la figura \ref{fig:M_r_hist} podemos ver que la muestra ccon la que estamos 
 \subsection{Índices de color}
 Los índices de color son una de las herramientas mas útiles de cualquier astrónomo, en particular sabemos por \cite{2004ApJ...600..681B} que las galaxias tienen un rango de ($0,4$) para el índice $u-r$ y de ($0,1$) para el índice $g-r$, ademas presentan una  cierta bimodalidad, características que se observan claramente en la figura \ref{fig:colores}, con esto en mente podemos clasificar a las galaxias como rojas o azules. 
 
-Para separar por color se ajusto dos distribuciones gaussianas al índice u-r, ya que es donde el cambio es más marcado debido a una mayor diferencia entre las longitudes de onda de cada filtro, y se selecciono como límite el punto donde ambas gaussianas se tocan, esto es en el punto $u-r \sim 2.10$. Con esto se separon a las galaxias según su color como se muestra en la figura \ref{fig:red_blue}
+Para separar por color se ajusto dos distribuciones gaussianas al índice u-r como se ve en la figura \ref{fig:red_blue}, ya que es donde el cambio es más marcado debido a una mayor diferencia entre las longitudes de onda de cada filtro, y se selecciono como límite el punto donde ambas gaussianas se tocan, esto es en el punto $u-r \sim 2.10$.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{colores.png}
-    \caption{Histograma de los índices de color de las galaxias seleccionadas.}
+    \caption{Histograma de los colores $u -r$ y $g-r$ de las galaxias seleccionadas.}
     \label{fig:colores}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\linewidth]{rojas_y_azules.png}
-    \caption{Histograma de los índices de color de las galaxias  rojas y azules.}
+    \includegraphics[width=\linewidth]{colores_ajustados.png}
+    \caption{Ajuste de 2 gaussianas para el histograma de la muestra del color $u-r$}
     \label{fig:red_blue}
 \end{figure}
+
+En la figura \ref{fig:red_blue} se puede ver que la gaussiana correspondiente a las ``galaxias azules'' tiene mayor amplitud y un mayor $\sigma$ que la correspondiente a las ``galaxias rojas'', esto es algo que se mantiene a lo largo de las distintas magnitudes, para esto se dividió la muestra en cuartiles de igual cantidad según los valores de $M_r$ y se ajusto la suma de gaussianas al histograma de cada cuartil, con esto se obtuvo la figura \ref{fig:dcm_quart} donde podemos ver los centros de cada gaussiana y la barra de $1\sigma$ a cada lado, estas están centradas en el valor medio de cada cuartil.
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{diagrama_color_magnitud_dispersion.png}
+    \caption{Ajuste de 2 gaussianas para el histograma de la muestra del color $u-r$, dividiendo en cuartiles según la magnitud absoluta}
+    \label{fig:dcm_quart}
+\end{figure}
+
+
 
 \subsection{Parametro de concentracion y parámetro fracDeV}
 La concentración $C$ muestra pico alrededor de 2.5 (Figura \ref{fig:hist_c}), usado para separar galaxias tempranas ($C > 2.5$) y tardías ($C \leq 2.5$).
@@ -361,6 +380,15 @@ Las Figuras \ref{fig:dcm}--\ref{fig:dcm_earlyylate} muestran la nube azul y secu
     \includegraphics[width=\linewidth]{dcm_el.png}
     \caption{Diagrama color magnitud para galaxias tempranas en color o  tardías en color  }
     \label{fig:dcm_earlyylate}
+\end{figure}
+
+De la figura \ref{fig:dcm}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{diagrama_color_magnitud_dispersion.png}
+    \caption{Diagrama tamaño vs luminosidad para toda la muestra de galaxias.}
+    \label{fig:mabs_vs_r50_ajustado}
 \end{figure}
 
 

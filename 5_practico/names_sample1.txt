@@ -1,0 +1,27 @@
+# CANTIDAD TOTAL DE GALAXIAS 5712
+#   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   cls          5712 non-null   int64   # nro de cluster
+ 1   ra           5712 non-null   float64 # ascencion recta
+ 2   dec          5712 non-null   float64 # declinacion
+ 3   z            5712 non-null   float64 # redshift de la galaxia 
+ 4   Mr01         5712 non-null   float64 # magnitud absoluta a z=0.1
+ 5   ur           5712 non-null   float64 # color u-r 
+ 6   mur          5712 non-null   float64 # brillo superficial
+ 7   kr50         5712 non-null   float64 # distancia r50 en kiloparsecs
+ 8   C            5712 non-null   float64 # concentracion
+ 9   stellarmass  5712 non-null   float64 # masa estelar
+ 10  sfr          5712 non-null   float64 # star formation rate
+ 11  ssfr         5712 non-null   float64 # specific sfr
+ 12  Dn4000       5712 non-null   float64 # break de los 4000
+ 13  class        5712 non-null   int64   # clasificacion para el cumulo 
+ 14  Zc           5712 non-null   float64 # redshift del cumulo 
+ 15  sigma        5712 non-null   float64 # velocidad de dispersion del cumulo
+ 16  Mvir         5712 non-null   float64 # masa virial DEL CUMULO
+ 17  Rvir         5712 non-null   float64 # radio virial DEL CUMULO 
+ 18  R200         5712 non-null   float64 # radio que encierra 200 la densidad del universo PARA EL CUMULO
+ 19  w            5712 non-null   float64 # peso 1/V_max
+ 20  dist         5712 non-null   float64 # r/R200 
+ 21  Pe           5712 non-null   float64 # probabilidad de ser eliptica segun GalaxyZoo
+ 
+#la distribucion 

@@ -1,0 +1,19 @@
+# CANTIDAD TOTAL DE GALAXIAS 27005
+#   Column    Non-Null Count  Dtype  
+---  ------    --------------  -----  
+ 0   cls       27005 non-null  int64   #nro de cluster al que pertenece
+ 1   ig        27005 non-null  int64   # numero
+ 2   type      27005 non-null  int64   # tipo de galaxia 0= central, 1= satelite, 2 = huerfana
+ 3   clase     27005 non-null  object  
+ # valores posibles: 'CL ligadas hace tiempo'y'RI ligadas recientemente' viven en el cumulo,'IN estan cayendo','IL en la zona pero no ligadas','BS backsplash' fuera de cumulo
+ 4   smass     27005 non-null  float64 # star mass
+ 5   u         27005 non-null  float64 # magnitud u
+ 6   g         27005 non-null  float64 # magnitud g
+ 7   r         27005 non-null  float64 # magnitud r
+ 8   sfr       27005 non-null  float64 # star formation rate
+ 9   Mcoldgas  27005 non-null  float64 # masa de gas frio 
+ 10  Mhotgas   27005 non-null  float64 # masa de gas caliente
+ 11  Tau       27005 non-null  float64 # edad
+ 12  OH        27005 non-null  float64 # abundancia del oxigeno ya con el log
+ 13  bt        27005 non-null  float64 # bulge total??
+ 14  ssfr      27005 non-null  float64 # specific star formation rate
